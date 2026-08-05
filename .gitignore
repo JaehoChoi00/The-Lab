@@ -1,0 +1,35 @@
+# Ignore documentation exports
+*.pdf
+
+# gitignore does not affect files already being tracked.
+# Remove them from the Git index first:
+# git rm --cached <file>
+# git rm -r --cached .
+
+# Never commit secrets
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+
+# Operating system files
+.DS_Store
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+
+# Common build directories
+build/
+dist/
+out/
+.cache/
+vendor/
+node_modules/
+
+# Logs
+*.log
+
+# VS Code
+.vscode/*
+!.vscode/extensions.json
