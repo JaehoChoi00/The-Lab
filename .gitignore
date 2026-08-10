@@ -1,5 +1,16 @@
 # Ignore documentation exports
 *.pdf
+*.class
+
+# C/C++ Executables and Compiled Binaries
+*.exe
+*.out
+*.app
+*.elf
+
+# Object files and intermediate build artifacts
+*.o
+*.obj
 
 # gitignore does not affect files already being tracked.
 # Remove them from the Git index first:
@@ -33,3 +44,9 @@ node_modules/
 # VS Code
 .vscode/*
 !.vscode/extensions.json
+
+# Temporary IDE Lock and Backup Files
+.*~
+*~
+*.lck
+*.LCK*

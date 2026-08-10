@@ -5,4 +5,5 @@
 
 ## Library
 
-> * [Game Experiments](/Game%20Experiments/GameExperiments.md)
+> * [Game Experiments](/GameExperiments/GameExperiments.md)
+> * [Text Formatting](/textFormatting/TextFormatting.md)

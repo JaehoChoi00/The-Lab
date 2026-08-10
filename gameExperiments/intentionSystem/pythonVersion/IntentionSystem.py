@@ -1,10 +1,12 @@
 import copy
 import os
 import time
+import math
 
 # /usr/local/bin/python3 IntentionSystem.py
 
 def systemPrint(stringToPrint):
+    # Log
     print(stringToPrint)
 
 def generatePlayer(name, hitpoint, positionX, positionY, symbol):
@@ -108,10 +110,21 @@ class World:
         self.players.remove(playerToRemove)
 
     def modifyWorld(self, newSizeX, newSizeY):
+        if (newSizeX < 1 or newSizeY < 1) :
+            return
+        oldSizeX = self.worldStats["matrixSizeX"]
+        oldSizeY = self.worldStats["matrixSizeY"]
         self.worldStats["matrixSizeX"] = newSizeX
         self.worldStats["matrixSizeY"] = newSizeY
         self.emptyMap = [[0] * self.worldStats["matrixSizeX"] for _ in range(self.worldStats["matrixSizeY"])]
         self.renderedMap = copy.deepcopy(self.emptyMap)
+
+        for player in self.players:
+            if (player.playerStats['positionX'] >= newSizeX) :
+                player.changePlayerPositionX(player.playerStats['positionX'] - abs(oldSizeX - newSizeX))
+            if (player.playerStats['positionY'] >= newSizeY) :
+                player.changePlayerPositionY(player.playerStats['positionY'] - abs(oldSizeY - newSizeY))
+        
 
     def refreshWorldRender(self):
         self.renderedMap = copy.deepcopy(self.emptyMap) 
@@ -136,7 +149,7 @@ class World:
 
     def printGameStats(self):
         os.system('clear' if os.name == 'posix' else 'cls') 
-        print(f"\n--- PLAYER STATS: {len(self.players)}---")
+        print(f"\n--- PLAYER STATS: Count [{len(self.players)}] ---")
         self.printPlayers()
         print(f"--- WORLD STATE: {self.worldStats['name'].upper()} ---")
         print("-------------")
@@ -158,17 +171,20 @@ while (intent != "end"):
     if len(intent) < 2 and Bob.controller(intent):
         world.renderPlayers()
         world.printGameStats()
+        systemPrint(f"[Executing]: {intent}")
 
     elif intent == "scaleUp":
         newSizeX = world.worldStats['matrixSizeX'] + 1
         newSizeY = world.worldStats['matrixSizeY'] + 1
         world.modifyWorld(newSizeX, newSizeY)
+        world.renderPlayers()
         world.printGameStats()
         
     elif intent == "scaleDown":
         newSizeX = world.worldStats['matrixSizeX'] - 1
         newSizeY = world.worldStats['matrixSizeY'] - 1
         world.modifyWorld(newSizeX, newSizeY)
+        world.renderPlayers()
         world.printGameStats()
 
     elif len(intent) > 1:
@@ -176,6 +192,8 @@ while (intent != "end"):
             if (Bob.controller(instruction)):
                 world.renderPlayers()
                 world.printGameStats()
+                systemPrint(f"[Executing]: {instruction}")
+                
             time.sleep(0.3)
         
     intent = input()
