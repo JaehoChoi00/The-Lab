@@ -6,4 +6,4 @@
 
 ## Sections
 
-> * [About Intention](/GameExperiments/intentionSystem/About_Intention.md)
+> * [About Intention](GameExperiments/intentionSystem/About_Intention.md)
