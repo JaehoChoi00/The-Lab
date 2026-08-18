@@ -31,6 +31,7 @@ desktop.ini
 $RECYCLE.BIN/
 
 # Common build directories
+network/
 build/
 dist/
 out/

@@ -1,7 +1,7 @@
 #include <string.h>
 
 #include "binary.h"
-#include "../bitwise/bitwiseLogic.h"
+#include "../../cVersion/bitwise/bitwiseLogic.h"
 
 char* shiftLeft(char binary[]) {
     int binaryLength = strlen(binary);

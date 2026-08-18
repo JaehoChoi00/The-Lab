@@ -75,7 +75,7 @@ class Player:
     def unregisterWorld(self):
         self.world = None
 
-    def printPlayerStats(self):
+    def printPlayerStats(self ):
         print(f"Player name: {self.playerStats['name']}")
         print(f"Player hitpoint: {self.playerStats['hitpoint']}")
         print(f"Player positionX: {self.playerStats['positionX']}")

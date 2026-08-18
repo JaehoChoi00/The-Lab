@@ -2,10 +2,10 @@
 #include <string.h>
 #include <stdlib.h>
 
-#include "../cHeaders/VariableConstants.h"
-#include "binary/binary.h"
-#include "bitwise/bitwiseLogic.h"
-#include "arithmetics/cVersion/arithmetics.h"
+#include "../shared/cHeaders/VariableConstants.h"
+#include "cVersion/binary/binary.h"
+#include "cVersion/bitwise/bitwiseLogic.h"
+#include "cVersion/arithmetics/arithmetics.h"
 
 void testLogicDoubleInput(char logicType[], short (*logic)(short, short));
 void testLogicSingleInput(char logicType[], short (*logic)(short));

@@ -3,8 +3,8 @@
 #include <stdlib.h>
 
 #include "arithmetics.h"
-#include "bitwise/bitwiseLogic.h"
-#include "binary/binary.h"
+#include "cVersion/bitwise/bitwiseLogic.h"
+#include "cVersion/binary/binary.h"å
 
 char* alu_add(char binaryA[], char binaryB[]) {
 
