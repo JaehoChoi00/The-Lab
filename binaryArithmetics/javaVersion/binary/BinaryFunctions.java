@@ -15,7 +15,9 @@ public class BinaryFunctions {
 
         char[] shiftLeftBinary = new char[reformatBinaryLength];
 
-        java.util.Arrays.fill(shiftLeftBinary, '0');
+        for (int i = 0; i < reformatBinaryLength; i++) {
+            shiftLeftBinary[i] = '0';
+        }
 
         for (int bit = binaryLength - 1; bit >= 0; bit--) {
             shiftLeftBinary[(reformatBinaryLength - 1) - (binaryLength - 1 - bit)] = binaryChars[bit];
@@ -45,7 +47,9 @@ public class BinaryFunctions {
 
         char[] shiftRightBinary = new char[reformatBinaryLength];
 
-        java.util.Arrays.fill(shiftRightBinary, '0');
+        for (int i = 0; i < reformatBinaryLength; i++) {
+            shiftRightBinary[i] = '0';
+        }
 
         for (int bit = binaryLength - 1; bit >= 0; bit--) {
             shiftRightBinary[(reformatBinaryLength - 1) - (binaryLength - 1 - bit)] = binaryChars[bit];
@@ -71,7 +75,9 @@ public class BinaryFunctions {
         int reformatBinaryLength = ((binaryLength + 7) / 8) * 8;
 
         char[] flippedBinary = new char[reformatBinaryLength];
-        java.util.Arrays.fill(flippedBinary, '0');
+        for (int i = 0; i < reformatBinaryLength; i++) {
+            flippedBinary[i] = '0';
+        }
 
         for (int bit = binaryLength - 1; bit >= 0; bit--) {
             flippedBinary[(reformatBinaryLength - 1) - (binaryLength - 1 - bit)] = binaryChars[bit];
@@ -107,34 +113,31 @@ public class BinaryFunctions {
     }
 
     public static String convertToBinary(int variable) {
+        int rawLength = Integer.toBinaryString(variable).length();
+        
+        if (variable < 0) rawLength = 8;
 
+        int reformatBinaryLength = ((rawLength + 7) / 8) * 8;
+        return convertToBinary(variable, reformatBinaryLength);
+    }
+
+    public static String convertToBinary(int variable, int targetLength) {
         long unsignedValue = variable;
 
+        // Negative numbers using Two's Complement (32-bit unsigned offset)
         if (unsignedValue < 0) {
             unsignedValue = 4294967296L + unsignedValue; 
         }
 
-        if (unsignedValue == 0) {
-            return "00000000";
-        }
-        
-        String binary = "";
+        char[] binaryBits = new char[targetLength];
 
-        while (unsignedValue > 0) {
-            binary = unsignedValue%2 + binary;
-            unsignedValue = unsignedValue/2;
-        }
-
-        int binaryLength = binary.length();
-        int reformatBinaryLength = ((binaryLength + 7) / 8) * 8;
-
-        char[] inverseBinary = binary.toCharArray();
-        char[] binaryBits = new char[reformatBinaryLength];
-
-        java.util.Arrays.fill(binaryBits, '0');
-
-        for (int bit = binaryLength - 1; bit >= 0; bit--) {
-            binaryBits[bit + (reformatBinaryLength - binaryLength)] = inverseBinary[bit];
+        for (int i = targetLength - 1; i >= 0; i--) {
+            if (unsignedValue > 0) {
+                binaryBits[i] = (unsignedValue % 2 == 1) ? '1' : '0';
+                unsignedValue = unsignedValue / 2;
+            } else {
+                binaryBits[i] = '0'; 
+            }
         }
 
         return new String(binaryBits);
@@ -146,7 +149,9 @@ public class BinaryFunctions {
         int reformatBinaryLength = ((binaryLength + 3) / 4) * 4;
 
         char[] binaryArray = new char[reformatBinaryLength];
-        java.util.Arrays.fill(binaryArray, '0');
+        for (int i = 0; i < reformatBinaryLength; i++) {
+            binaryArray[i] = '0';
+        }
 
         for (int bit = binaryLength - 1; bit >= 0; bit--) {
             int targetIndex = (reformatBinaryLength - 1) - (binaryLength - 1 - bit);
@@ -187,6 +192,72 @@ public class BinaryFunctions {
         }
 
         return binary;
+    }
+
+    public static int[] convertToByteUTF8(String textToConvert) {
+        int textLength = textToConvert.length();
+
+        int totalBytesNeeded = 0;
+        for (int index = 0; index < textLength;) {
+            int codePoint = textToConvert.codePointAt(index);
+            if (codePoint >= 0 && codePoint <= 127) totalBytesNeeded += 1;
+            else if (codePoint <= 2047) totalBytesNeeded += 2;
+            else if (codePoint <= 65535) totalBytesNeeded += 3;
+            else if (codePoint <= 1114111) totalBytesNeeded += 4;
+
+            index += Character.charCount(codePoint); 
+        }
+
+        int[] intBytes = new int[totalBytesNeeded];
+        int byteIndex = 0;
+        for (int index = 0; index < textLength;) {
+            int conversion = textToConvert.codePointAt(index);
+
+            if (conversion >= 0 && conversion <= 127) {
+                intBytes[byteIndex] = conversion;
+                byteIndex++;
+            }
+            // Byte 2
+            else if (conversion >= 128 && conversion <= 2047) {
+                String binaryConversion = convertToBinary(conversion, 11);
+                String byte1 = "110" + binaryConversion.substring(0, 5);
+                String byte2 = "10" + binaryConversion.substring(5, 11);
+                intBytes[byteIndex] = binaryToVariable(byte1);
+                intBytes[byteIndex+1] = binaryToVariable(byte2);
+                byteIndex += 2;
+            }
+            // Byte 3
+            else if (conversion >= 2048 && conversion <= 65535) {
+                String binaryConversion = convertToBinary(conversion, 16);
+                String byte1 = "1110" + binaryConversion.substring(0, 4);
+                String byte2 = "10"   + binaryConversion.substring(4, 10);
+                String byte3 = "10"   + binaryConversion.substring(10, 16);
+                intBytes[byteIndex] = binaryToVariable(byte1);
+                intBytes[byteIndex+1] = binaryToVariable(byte2);
+                intBytes[byteIndex+2] = binaryToVariable(byte3);
+                byteIndex += 3;
+            }
+            // Byte 4
+            else if (conversion >= 65536 && conversion <= 1114111) {
+                String binaryConversion = convertToBinary(conversion, 21);
+                String byte1 = "11110" + binaryConversion.substring(0, 3);
+                String byte2 = "10"    + binaryConversion.substring(3, 9);
+                String byte3 = "10"    + binaryConversion.substring(9, 15);
+                String byte4 = "10"    + binaryConversion.substring(15, 21);
+                intBytes[byteIndex] = binaryToVariable(byte1);
+                intBytes[byteIndex+1] = binaryToVariable(byte2);
+                intBytes[byteIndex+2] = binaryToVariable(byte3);
+                intBytes[byteIndex+3] = binaryToVariable(byte4);
+                byteIndex += 4;
+            }
+            
+            index += Character.charCount(conversion);
+        }
+        // for (int i : intBytes) {
+        //     System.out.println(i);
+        // }
+
+        return intBytes;
     }
 
 }

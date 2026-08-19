@@ -9,6 +9,13 @@ import static binaryArithmetics.javaVersion.bitwise.BitwiseLogic.XOR;
 public class Arithmetics {
 
     public static String alu_add(String binaryA, String binaryB) {
+        while (binaryB.length() < binaryA.length()) {
+            binaryB = "0" + binaryB;
+        }
+        while (binaryA.length() < binaryB.length()) {
+            binaryA = "0" + binaryA;
+        }
+        
         int bitsCount = binaryA.length();
         char[] tempA = binaryA.toCharArray();
         char[] tempB = binaryB.toCharArray();
@@ -44,7 +51,9 @@ public class Arithmetics {
 
         char[] onePadded = new char[bitsCount];
 
-        java.util.Arrays.fill(onePadded, '0');
+        for (int i = 0; i < bitsCount; i++) {
+            onePadded[i] = '0';
+        }
         onePadded[bitsCount-1] = '1';
 
         String twosCompliment = alu_add(flip(String.valueOf(tempB)), String.valueOf(onePadded));

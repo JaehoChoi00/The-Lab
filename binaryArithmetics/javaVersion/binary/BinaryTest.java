@@ -2,6 +2,7 @@ package binaryArithmetics.javaVersion.binary;
 
 import static binaryArithmetics.javaVersion.binary.BinaryFunctions.binaryToVariable;
 import static binaryArithmetics.javaVersion.binary.BinaryFunctions.convertToBinary;
+import static binaryArithmetics.javaVersion.binary.BinaryFunctions.convertToByteUTF8;
 import static binaryArithmetics.javaVersion.binary.BinaryFunctions.convertToHex;
 import static binaryArithmetics.javaVersion.binary.BinaryFunctions.flip;
 import static binaryArithmetics.javaVersion.binary.BinaryFunctions.hexToBinary;
@@ -66,6 +67,11 @@ public class BinaryTest {
         String hexToConvert = "0xbb67ae85";
 
         System.out.printf("Hex to convert: " + BOLD + FG_GREEN + "%s" + RESET + " Binary: " + BOLD + FG_COLOR(50) + "%s" + RESET, hexToConvert, hexToBinary(hexToConvert));
+        NEWLINE();
+
+        String stringToConvert = "Hello 안녕";
+
+        System.out.printf("String to convert: " + BOLD + FG_GREEN + "%s" + RESET + " Byte: " + BOLD + FG_COLOR(50) + "%s" + RESET, stringToConvert, java.util.Arrays.toString(convertToByteUTF8(stringToConvert)));
         NEWLINE();
 
         LINEBREAK();
