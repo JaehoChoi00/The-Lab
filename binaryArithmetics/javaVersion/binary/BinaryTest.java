@@ -8,74 +8,138 @@ import static binaryArithmetics.javaVersion.binary.BinaryFunctions.flip;
 import static binaryArithmetics.javaVersion.binary.BinaryFunctions.hexToBinary;
 import static binaryArithmetics.javaVersion.binary.BinaryFunctions.shiftLeft;
 import static binaryArithmetics.javaVersion.binary.BinaryFunctions.shiftRight;
-import static shared.javaUtil.VariableConstants.BOLD;
-import static shared.javaUtil.VariableConstants.FG_COLOR;
-import static shared.javaUtil.VariableConstants.FG_GREEN;
-import static shared.javaUtil.VariableConstants.LINEBREAK;
-import static shared.javaUtil.VariableConstants.LINEFEED;
-import static shared.javaUtil.VariableConstants.NEWLINE;
-import static shared.javaUtil.VariableConstants.RESET;
-import static shared.javaUtil.VariableConstants.UNDERLINE;
+import shared.javaUtil.Exposure;
+import shared.javaUtil.enums.ExposureCategory;
+import shared.javaUtil.enums.ExposureLevel;
 
 public class BinaryTest {
 
     public void run() {
-        // Binary Operations
-        System.out.printf(BOLD + UNDERLINE + "%c[Binary Operations]" +  RESET, (char) LINEFEED);
-        NEWLINE();
+        // Main Category Header
+        Exposure.printf(
+            ExposureCategory.TEST, ExposureLevel.LEVEL1, 
+            Exposure.BOLD + Exposure.UNDERLINE + "%c[Binary Operations]" + Exposure.RESET, 
+            (char) Exposure.LINEFEED
+        );
+        Exposure.NEWLINE(ExposureCategory.TEST, ExposureLevel.LEVEL1);
 
         String testBinary = "111100111";
 
-        System.out.printf("Original binary: " + BOLD + FG_GREEN + "%s" + RESET + " Value: " + BOLD + FG_COLOR(50) + "%d" + RESET, testBinary, binaryToVariable(testBinary));
-        NEWLINE();
+        // --- 1. Binary to Variable ---
+        int varValue = binaryToVariable(testBinary);
+        Exposure.printf(
+            ExposureCategory.TEST, ExposureLevel.LEVEL1, 
+            Exposure.BOLD + "Binary to Variable ->" + Exposure.RESET 
+            + " Input: " + Exposure.FG_CYAN + "%s" + Exposure.RESET 
+            + " Result: " + Exposure.BOLD + Exposure.FG_GREEN + "%d" + Exposure.RESET, 
+            testBinary, varValue
+        );
+        Exposure.NEWLINE(ExposureCategory.TEST, ExposureLevel.LEVEL1);
 
-        String shiftLeftBinary = shiftLeft(testBinary);
+        // --- 2. Shift Left (1) ---
+        String shiftLeft1 = shiftLeft(testBinary);
+        Exposure.printf(
+            ExposureCategory.TEST, ExposureLevel.LEVEL1, 
+            Exposure.BOLD + "Shift Left (1) ->" + Exposure.RESET 
+            + " Input: " + Exposure.FG_CYAN + "%s" + Exposure.RESET 
+            + " Result: " + Exposure.BOLD + Exposure.FG_GREEN + "%s" + Exposure.RESET, 
+            testBinary, shiftLeft1
+        );
+        Exposure.NEWLINE(ExposureCategory.TEST, ExposureLevel.LEVEL1);
 
-        System.out.printf("Binary after shift Left: " + BOLD + FG_GREEN + "%s" + RESET + " Value: " + BOLD + FG_COLOR(50) + "%d" + RESET, shiftLeftBinary, binaryToVariable(shiftLeftBinary));
-        NEWLINE();
+        // --- 3. Shift Left (2) ---
+        String shiftLeft2 = shiftLeft(testBinary, 2);
+        Exposure.printf(
+            ExposureCategory.TEST, ExposureLevel.LEVEL1, 
+            Exposure.BOLD + "Shift Left (2) ->" + Exposure.RESET 
+            + " Input: " + Exposure.FG_CYAN + "%s" + Exposure.RESET 
+            + " Result: " + Exposure.BOLD + Exposure.FG_GREEN + "%s" + Exposure.RESET, 
+            testBinary, shiftLeft2
+        );
+        Exposure.NEWLINE(ExposureCategory.TEST, ExposureLevel.LEVEL1);
 
-        String shiftLeftBinary5 = shiftLeft(testBinary, 2);
+        // --- 4. Shift Right (1) ---
+        String shiftRight1 = shiftRight(testBinary);
+        Exposure.printf(
+            ExposureCategory.TEST, ExposureLevel.LEVEL1, 
+            Exposure.BOLD + "Shift Right (1) ->" + Exposure.RESET 
+            + " Input: " + Exposure.FG_CYAN + "%s" + Exposure.RESET 
+            + " Result: " + Exposure.BOLD + Exposure.FG_GREEN + "%s" + Exposure.RESET, 
+            testBinary, shiftRight1
+        );
+        Exposure.NEWLINE(ExposureCategory.TEST, ExposureLevel.LEVEL1);
 
-        System.out.printf("Binary after shift Left by 2: " + BOLD + FG_GREEN + "%s" + RESET + " Value: " + BOLD + FG_COLOR(50) + "%d" + RESET, shiftLeftBinary5, binaryToVariable(shiftLeftBinary5));
-        NEWLINE();
+        // --- 5. Shift Right (2) ---
+        String shiftRight2 = shiftRight(testBinary, 2);
+        Exposure.printf(
+            ExposureCategory.TEST, ExposureLevel.LEVEL1, 
+            Exposure.BOLD + "Shift Right (2) ->" + Exposure.RESET 
+            + " Input: " + Exposure.FG_CYAN + "%s" + Exposure.RESET 
+            + " Result: " + Exposure.BOLD + Exposure.FG_GREEN + "%s" + Exposure.RESET, 
+            testBinary, shiftRight2
+        );
+        Exposure.NEWLINE(ExposureCategory.TEST, ExposureLevel.LEVEL1);
 
-        String shiftRightBinary = shiftRight(testBinary);
+        // --- 6. Flip Bits ---
+        String flipped = flip(testBinary);
+        Exposure.printf(
+            ExposureCategory.TEST, ExposureLevel.LEVEL1, 
+            Exposure.BOLD + "Flip Bits ->" + Exposure.RESET 
+            + " Input: " + Exposure.FG_CYAN + "%s" + Exposure.RESET 
+            + " Result: " + Exposure.BOLD + Exposure.FG_GREEN + "%s" + Exposure.RESET, 
+            testBinary, flipped
+        );
+        Exposure.NEWLINE(ExposureCategory.TEST, ExposureLevel.LEVEL1);
 
-        System.out.printf("Binary after shift Right: " + BOLD + FG_GREEN + "%s" + RESET + " Value: " + BOLD + FG_COLOR(50) + "%d" + RESET, shiftRightBinary, binaryToVariable(shiftRightBinary));
-        NEWLINE();
-
-        String shiftRightBinary5 = shiftRight(testBinary, 2);
-
-        System.out.printf("Binary after shift Right by 2: " + BOLD + FG_GREEN + "%s" + RESET + " Value: " + BOLD + FG_COLOR(50) + "%d" + RESET, shiftRightBinary5, binaryToVariable(shiftRightBinary5));
-        NEWLINE();
-
-        String flippedBinary = flip(testBinary);
-
-        System.out.printf("Binary after flipping: " + BOLD + FG_GREEN + "%s" + RESET + " Value: " + BOLD + FG_COLOR(50) + "%d" + RESET, flippedBinary, binaryToVariable(flippedBinary));
-        NEWLINE();
-
+        // --- 7. Decimal to Binary ---
         int variableToConvert = 0xbb67ae85;
+        String convertedBinary = convertToBinary(variableToConvert);
+        Exposure.printf(
+            ExposureCategory.TEST, ExposureLevel.LEVEL1, 
+            Exposure.BOLD + "Decimal to Binary ->" + Exposure.RESET 
+            + " Input: " + Exposure.FG_CYAN + "%d" + Exposure.RESET 
+            + " Result: " + Exposure.BOLD + Exposure.FG_GREEN + "%s" + Exposure.RESET, 
+            variableToConvert, convertedBinary
+        );
+        Exposure.NEWLINE(ExposureCategory.TEST, ExposureLevel.LEVEL1);
 
-        System.out.printf("Variable to convert: " + BOLD + FG_GREEN + "%d" + RESET + " Binary: " + BOLD + FG_COLOR(50) + "%s" + RESET, variableToConvert, convertToBinary(variableToConvert));
-        NEWLINE();
-
+        // --- 8. Binary to Hex ---
         String binaryToConvert = "001100011111";
+        String convertedHex = convertToHex(binaryToConvert);
+        Exposure.printf(
+            ExposureCategory.TEST, ExposureLevel.LEVEL1, 
+            Exposure.BOLD + "Binary to Hex ->" + Exposure.RESET 
+            + " Input: " + Exposure.FG_CYAN + "%s" + Exposure.RESET 
+            + " Result: " + Exposure.BOLD + Exposure.FG_GREEN + "%s" + Exposure.RESET, 
+            binaryToConvert, convertedHex
+        );
+        Exposure.NEWLINE(ExposureCategory.TEST, ExposureLevel.LEVEL1);
 
-        System.out.printf("Binary to convert: " + BOLD + FG_GREEN + "%s" + RESET + " Hex: " + BOLD + FG_COLOR(50) + "%s" + RESET, binaryToConvert, convertToHex(binaryToConvert));
-        NEWLINE();
-
+        // --- 9. Hex to Binary ---
         String hexToConvert = "0xbb67ae85";
+        String convertedHexBinary = hexToBinary(hexToConvert);
+        Exposure.printf(
+            ExposureCategory.TEST, ExposureLevel.LEVEL1, 
+            Exposure.BOLD + "Hex to Binary ->" + Exposure.RESET 
+            + " Input: " + Exposure.FG_CYAN + "%s" + Exposure.RESET 
+            + " Result: " + Exposure.BOLD + Exposure.FG_GREEN + "%s" + Exposure.RESET, 
+            hexToConvert, convertedHexBinary
+        );
+        Exposure.NEWLINE(ExposureCategory.TEST, ExposureLevel.LEVEL1);
 
-        System.out.printf("Hex to convert: " + BOLD + FG_GREEN + "%s" + RESET + " Binary: " + BOLD + FG_COLOR(50) + "%s" + RESET, hexToConvert, hexToBinary(hexToConvert));
-        NEWLINE();
-
+        // --- 10. String to UTF-8 Bytes ---
         String stringToConvert = "Hello 안녕";
+        int[] convertedBytes = convertToByteUTF8(stringToConvert);
+        Exposure.printf(
+            ExposureCategory.TEST, ExposureLevel.LEVEL1, 
+            Exposure.BOLD + "String to UTF-8 Bytes ->" + Exposure.RESET 
+            + " Input: " + Exposure.FG_CYAN + "\"%s\"" + Exposure.RESET 
+            + " Result: " + Exposure.BOLD + Exposure.FG_GREEN + "%s" + Exposure.RESET, 
+            stringToConvert, java.util.Arrays.toString(convertedBytes)
+        );
+        Exposure.NEWLINE(ExposureCategory.TEST, ExposureLevel.LEVEL1);
 
-        System.out.printf("String to convert: " + BOLD + FG_GREEN + "%s" + RESET + " Byte: " + BOLD + FG_COLOR(50) + "%s" + RESET, stringToConvert, java.util.Arrays.toString(convertToByteUTF8(stringToConvert)));
-        NEWLINE();
-
-        LINEBREAK();
+        // Final layout separator
+        Exposure.LINEBREAK(ExposureCategory.TEST, ExposureLevel.LEVEL1);
     }
-    
 }
-

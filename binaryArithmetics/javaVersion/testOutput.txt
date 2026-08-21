@@ -1,0 +1,2163 @@
+
+[Binary Arithmetics]
+
+
+[Binary -> Decimal] Input: 00000001
+   Bit [7] weight: 2^0 = 1
+   Bit [6] weight: 2^1 = 2
+   Bit [5] weight: 2^2 = 4
+   Bit [4] weight: 2^3 = 8
+   Bit [3] weight: 2^4 = 16
+   Bit [2] weight: 2^5 = 32
+   Bit [1] weight: 2^6 = 64
+   Bit [0] weight: 2^7 = 128
+ -> Grid size: 8 bits
+   Bit [7] = '1' (+1) -> Total: 1
+   Bit [6] = '0' (skip)
+   Bit [5] = '0' (skip)
+   Bit [4] = '0' (skip)
+   Bit [3] = '0' (skip)
+   Bit [2] = '0' (skip)
+   Bit [1] = '0' (skip)
+   Bit [0] = '0' (skip)
+ Output: 1
+
+[Binary -> Decimal] Input: 00000001
+   Bit [7] weight: 2^0 = 1
+   Bit [6] weight: 2^1 = 2
+   Bit [5] weight: 2^2 = 4
+   Bit [4] weight: 2^3 = 8
+   Bit [3] weight: 2^4 = 16
+   Bit [2] weight: 2^5 = 32
+   Bit [1] weight: 2^6 = 64
+   Bit [0] weight: 2^7 = 128
+ -> Grid size: 8 bits
+   Bit [7] = '1' (+1) -> Total: 1
+   Bit [6] = '0' (skip)
+   Bit [5] = '0' (skip)
+   Bit [4] = '0' (skip)
+   Bit [3] = '0' (skip)
+   Bit [2] = '0' (skip)
+   Bit [1] = '0' (skip)
+   Bit [0] = '0' (skip)
+ Output: 1
+Test Numbers -> A: 1 B: 1
+
+ALU ADDITION INITIALIZED
+Input_1 = 00000001
+Input_2 = 00000001
+
+
+
+[Binary -> Decimal] Input: 00000001
+   Bit [7] weight: 2^0 = 1
+   Bit [6] weight: 2^1 = 2
+   Bit [5] weight: 2^2 = 4
+   Bit [4] weight: 2^3 = 8
+   Bit [3] weight: 2^4 = 16
+   Bit [2] weight: 2^5 = 32
+   Bit [1] weight: 2^6 = 64
+   Bit [0] weight: 2^7 = 128
+ -> Grid size: 8 bits
+   Bit [7] = '1' (+1) -> Total: 1
+   Bit [6] = '0' (skip)
+   Bit [5] = '0' (skip)
+   Bit [4] = '0' (skip)
+   Bit [3] = '0' (skip)
+   Bit [2] = '0' (skip)
+   Bit [1] = '0' (skip)
+   Bit [0] = '0' (skip)
+ Output: 1
+
+[Binary -> Decimal] Input: 00000001
+   Bit [7] weight: 2^0 = 1
+   Bit [6] weight: 2^1 = 2
+   Bit [5] weight: 2^2 = 4
+   Bit [4] weight: 2^3 = 8
+   Bit [3] weight: 2^4 = 16
+   Bit [2] weight: 2^5 = 32
+   Bit [1] weight: 2^6 = 64
+   Bit [0] weight: 2^7 = 128
+ -> Grid size: 8 bits
+   Bit [7] = '1' (+1) -> Total: 1
+   Bit [6] = '0' (skip)
+   Bit [5] = '0' (skip)
+   Bit [4] = '0' (skip)
+   Bit [3] = '0' (skip)
+   Bit [2] = '0' (skip)
+   Bit [1] = '0' (skip)
+   Bit [0] = '0' (skip)
+ Output: 1
+--- Addition Accumulation Cycle 1 ---
+1 NAND 1 = 0
+0 NAND 0 = 1
+ NOT 0 = 1
+1 AND 1 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+0 NAND 1 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+1 NAND 0 = 1
+1 NAND 1 = 0
+1 NAND 1 = 0
+Bit 0:
+  A: 1
+  B: 1
+  Step Carry: 1
+  Step Sum: 0
+
+0 NAND 0 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+0 AND 0 = 0
+0 NAND 0 = 1
+ NOT 0 = 1
+1 NAND 0 = 1
+0 NAND 0 = 1
+ NOT 0 = 1
+0 NAND 1 = 1
+1 NAND 1 = 0
+0 NAND 0 = 0
+Bit 1:
+  A: 0
+  B: 0
+  Step Carry: 0
+  Step Sum: 0
+
+0 NAND 0 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+0 AND 0 = 0
+0 NAND 0 = 1
+ NOT 0 = 1
+1 NAND 0 = 1
+0 NAND 0 = 1
+ NOT 0 = 1
+0 NAND 1 = 1
+1 NAND 1 = 0
+0 NAND 0 = 0
+Bit 2:
+  A: 0
+  B: 0
+  Step Carry: 0
+  Step Sum: 0
+
+0 NAND 0 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+0 AND 0 = 0
+0 NAND 0 = 1
+ NOT 0 = 1
+1 NAND 0 = 1
+0 NAND 0 = 1
+ NOT 0 = 1
+0 NAND 1 = 1
+1 NAND 1 = 0
+0 NAND 0 = 0
+Bit 3:
+  A: 0
+  B: 0
+  Step Carry: 0
+  Step Sum: 0
+
+0 NAND 0 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+0 AND 0 = 0
+0 NAND 0 = 1
+ NOT 0 = 1
+1 NAND 0 = 1
+0 NAND 0 = 1
+ NOT 0 = 1
+0 NAND 1 = 1
+1 NAND 1 = 0
+0 NAND 0 = 0
+Bit 4:
+  A: 0
+  B: 0
+  Step Carry: 0
+  Step Sum: 0
+
+0 NAND 0 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+0 AND 0 = 0
+0 NAND 0 = 1
+ NOT 0 = 1
+1 NAND 0 = 1
+0 NAND 0 = 1
+ NOT 0 = 1
+0 NAND 1 = 1
+1 NAND 1 = 0
+0 NAND 0 = 0
+Bit 5:
+  A: 0
+  B: 0
+  Step Carry: 0
+  Step Sum: 0
+
+0 NAND 0 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+0 AND 0 = 0
+0 NAND 0 = 1
+ NOT 0 = 1
+1 NAND 0 = 1
+0 NAND 0 = 1
+ NOT 0 = 1
+0 NAND 1 = 1
+1 NAND 1 = 0
+0 NAND 0 = 0
+Bit 6:
+  A: 0
+  B: 0
+  Step Carry: 0
+  Step Sum: 0
+
+0 NAND 0 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+0 AND 0 = 0
+0 NAND 0 = 1
+ NOT 0 = 1
+1 NAND 0 = 1
+0 NAND 0 = 1
+ NOT 0 = 1
+0 NAND 1 = 1
+1 NAND 1 = 0
+0 NAND 0 = 0
+Bit 7:
+  A: 0
+  B: 0
+  Step Carry: 0
+  Step Sum: 0
+
+
+[Shift Left] Input: 00000001 | Shifts: 1
+ -> Padded: 8 bits -> 8 bits
+ -> Padded State: 00000001
+   Shift 1: 00000010
+ Output: 00000010
+  Accumulated Sum  : 00000000
+  Shifted Carry Out: 00000010
+
+
+[Binary -> Decimal] Input: 00000010
+   Bit [7] weight: 2^0 = 1
+   Bit [6] weight: 2^1 = 2
+   Bit [5] weight: 2^2 = 4
+   Bit [4] weight: 2^3 = 8
+   Bit [3] weight: 2^4 = 16
+   Bit [2] weight: 2^5 = 32
+   Bit [1] weight: 2^6 = 64
+   Bit [0] weight: 2^7 = 128
+ -> Grid size: 8 bits
+   Bit [7] = '0' (skip)
+   Bit [6] = '1' (+2) -> Total: 2
+   Bit [5] = '0' (skip)
+   Bit [4] = '0' (skip)
+   Bit [3] = '0' (skip)
+   Bit [2] = '0' (skip)
+   Bit [1] = '0' (skip)
+   Bit [0] = '0' (skip)
+ Output: 2
+--- Addition Accumulation Cycle 2 ---
+0 NAND 0 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+0 AND 0 = 0
+0 NAND 0 = 1
+ NOT 0 = 1
+1 NAND 0 = 1
+0 NAND 0 = 1
+ NOT 0 = 1
+0 NAND 1 = 1
+1 NAND 1 = 0
+0 NAND 0 = 0
+Bit 0:
+  A: 0
+  B: 0
+  Step Carry: 0
+  Step Sum: 0
+
+0 NAND 1 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+0 AND 1 = 0
+0 NAND 0 = 1
+ NOT 0 = 1
+1 NAND 1 = 0
+1 NAND 1 = 0
+ NOT 1 = 0
+0 NAND 0 = 1
+0 NAND 1 = 1
+0 NAND 1 = 1
+Bit 1:
+  A: 0
+  B: 1
+  Step Carry: 0
+  Step Sum: 1
+
+0 NAND 0 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+0 AND 0 = 0
+0 NAND 0 = 1
+ NOT 0 = 1
+1 NAND 0 = 1
+0 NAND 0 = 1
+ NOT 0 = 1
+0 NAND 1 = 1
+1 NAND 1 = 0
+0 NAND 0 = 0
+Bit 2:
+  A: 0
+  B: 0
+  Step Carry: 0
+  Step Sum: 0
+
+0 NAND 0 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+0 AND 0 = 0
+0 NAND 0 = 1
+ NOT 0 = 1
+1 NAND 0 = 1
+0 NAND 0 = 1
+ NOT 0 = 1
+0 NAND 1 = 1
+1 NAND 1 = 0
+0 NAND 0 = 0
+Bit 3:
+  A: 0
+  B: 0
+  Step Carry: 0
+  Step Sum: 0
+
+0 NAND 0 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+0 AND 0 = 0
+0 NAND 0 = 1
+ NOT 0 = 1
+1 NAND 0 = 1
+0 NAND 0 = 1
+ NOT 0 = 1
+0 NAND 1 = 1
+1 NAND 1 = 0
+0 NAND 0 = 0
+Bit 4:
+  A: 0
+  B: 0
+  Step Carry: 0
+  Step Sum: 0
+
+0 NAND 0 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+0 AND 0 = 0
+0 NAND 0 = 1
+ NOT 0 = 1
+1 NAND 0 = 1
+0 NAND 0 = 1
+ NOT 0 = 1
+0 NAND 1 = 1
+1 NAND 1 = 0
+0 NAND 0 = 0
+Bit 5:
+  A: 0
+  B: 0
+  Step Carry: 0
+  Step Sum: 0
+
+0 NAND 0 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+0 AND 0 = 0
+0 NAND 0 = 1
+ NOT 0 = 1
+1 NAND 0 = 1
+0 NAND 0 = 1
+ NOT 0 = 1
+0 NAND 1 = 1
+1 NAND 1 = 0
+0 NAND 0 = 0
+Bit 6:
+  A: 0
+  B: 0
+  Step Carry: 0
+  Step Sum: 0
+
+0 NAND 0 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+0 AND 0 = 0
+0 NAND 0 = 1
+ NOT 0 = 1
+1 NAND 0 = 1
+0 NAND 0 = 1
+ NOT 0 = 1
+0 NAND 1 = 1
+1 NAND 1 = 0
+0 NAND 0 = 0
+Bit 7:
+  A: 0
+  B: 0
+  Step Carry: 0
+  Step Sum: 0
+
+
+[Shift Left] Input: 00000000 | Shifts: 1
+ -> Padded: 8 bits -> 8 bits
+ -> Padded State: 00000000
+   Shift 1: 00000000
+ Output: 00000000
+  Accumulated Sum  : 00000010
+  Shifted Carry Out: 00000000
+
+
+[Binary -> Decimal] Input: 00000000
+   Bit [7] weight: 2^0 = 1
+   Bit [6] weight: 2^1 = 2
+   Bit [5] weight: 2^2 = 4
+   Bit [4] weight: 2^3 = 8
+   Bit [3] weight: 2^4 = 16
+   Bit [2] weight: 2^5 = 32
+   Bit [1] weight: 2^6 = 64
+   Bit [0] weight: 2^7 = 128
+ -> Grid size: 8 bits
+   Bit [7] = '0' (skip)
+   Bit [6] = '0' (skip)
+   Bit [5] = '0' (skip)
+   Bit [4] = '0' (skip)
+   Bit [3] = '0' (skip)
+   Bit [2] = '0' (skip)
+   Bit [1] = '0' (skip)
+   Bit [0] = '0' (skip)
+ Output: 0
+Output  = 00000010
+
+[Binary -> Decimal] Input: 00000010
+   Bit [7] weight: 2^0 = 1
+   Bit [6] weight: 2^1 = 2
+   Bit [5] weight: 2^2 = 4
+   Bit [4] weight: 2^3 = 8
+   Bit [3] weight: 2^4 = 16
+   Bit [2] weight: 2^5 = 32
+   Bit [1] weight: 2^6 = 64
+   Bit [0] weight: 2^7 = 128
+ -> Grid size: 8 bits
+   Bit [7] = '0' (skip)
+   Bit [6] = '1' (+2) -> Total: 2
+   Bit [5] = '0' (skip)
+   Bit [4] = '0' (skip)
+   Bit [3] = '0' (skip)
+   Bit [2] = '0' (skip)
+   Bit [1] = '0' (skip)
+   Bit [0] = '0' (skip)
+ Output: 2
+ALU Add -> 00000001 + 00000001 = 00000010 (Decimal: 2)
+
+ALU SUBTRACTION INITIALIZED
+Minuend    (A): 00000001
+Subtrahend (B): 00000001
+
+
+ -> Transforming Subtrahend using Two's Complement...
+
+[Flip Bits] Input: 00000001
+ -> Normalized: 00000001
+   Bit [0]: 0 -> 1
+   Bit [1]: 0 -> 1
+   Bit [2]: 0 -> 1
+   Bit [3]: 0 -> 1
+   Bit [4]: 0 -> 1
+   Bit [5]: 0 -> 1
+   Bit [6]: 0 -> 1
+   Bit [7]: 1 -> 0
+ Output: 11111110
+ALU ADDITION INITIALIZED
+Input_1 = 11111110
+Input_2 = 00000001
+
+
+
+[Binary -> Decimal] Input: 00000001
+   Bit [7] weight: 2^0 = 1
+   Bit [6] weight: 2^1 = 2
+   Bit [5] weight: 2^2 = 4
+   Bit [4] weight: 2^3 = 8
+   Bit [3] weight: 2^4 = 16
+   Bit [2] weight: 2^5 = 32
+   Bit [1] weight: 2^6 = 64
+   Bit [0] weight: 2^7 = 128
+ -> Grid size: 8 bits
+   Bit [7] = '1' (+1) -> Total: 1
+   Bit [6] = '0' (skip)
+   Bit [5] = '0' (skip)
+   Bit [4] = '0' (skip)
+   Bit [3] = '0' (skip)
+   Bit [2] = '0' (skip)
+   Bit [1] = '0' (skip)
+   Bit [0] = '0' (skip)
+ Output: 1
+
+[Binary -> Decimal] Input: 00000001
+   Bit [7] weight: 2^0 = 1
+   Bit [6] weight: 2^1 = 2
+   Bit [5] weight: 2^2 = 4
+   Bit [4] weight: 2^3 = 8
+   Bit [3] weight: 2^4 = 16
+   Bit [2] weight: 2^5 = 32
+   Bit [1] weight: 2^6 = 64
+   Bit [0] weight: 2^7 = 128
+ -> Grid size: 8 bits
+   Bit [7] = '1' (+1) -> Total: 1
+   Bit [6] = '0' (skip)
+   Bit [5] = '0' (skip)
+   Bit [4] = '0' (skip)
+   Bit [3] = '0' (skip)
+   Bit [2] = '0' (skip)
+   Bit [1] = '0' (skip)
+   Bit [0] = '0' (skip)
+ Output: 1
+--- Addition Accumulation Cycle 1 ---
+0 NAND 1 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+0 AND 1 = 0
+0 NAND 0 = 1
+ NOT 0 = 1
+1 NAND 1 = 0
+1 NAND 1 = 0
+ NOT 1 = 0
+0 NAND 0 = 1
+0 NAND 1 = 1
+0 NAND 1 = 1
+Bit 0:
+  A: 0
+  B: 1
+  Step Carry: 0
+  Step Sum: 1
+
+1 NAND 0 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+1 AND 0 = 0
+1 NAND 1 = 0
+ NOT 1 = 0
+0 NAND 0 = 1
+0 NAND 0 = 1
+ NOT 0 = 1
+1 NAND 1 = 0
+1 NAND 0 = 1
+1 NAND 0 = 1
+Bit 1:
+  A: 1
+  B: 0
+  Step Carry: 0
+  Step Sum: 1
+
+1 NAND 0 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+1 AND 0 = 0
+1 NAND 1 = 0
+ NOT 1 = 0
+0 NAND 0 = 1
+0 NAND 0 = 1
+ NOT 0 = 1
+1 NAND 1 = 0
+1 NAND 0 = 1
+1 NAND 0 = 1
+Bit 2:
+  A: 1
+  B: 0
+  Step Carry: 0
+  Step Sum: 1
+
+1 NAND 0 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+1 AND 0 = 0
+1 NAND 1 = 0
+ NOT 1 = 0
+0 NAND 0 = 1
+0 NAND 0 = 1
+ NOT 0 = 1
+1 NAND 1 = 0
+1 NAND 0 = 1
+1 NAND 0 = 1
+Bit 3:
+  A: 1
+  B: 0
+  Step Carry: 0
+  Step Sum: 1
+
+1 NAND 0 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+1 AND 0 = 0
+1 NAND 1 = 0
+ NOT 1 = 0
+0 NAND 0 = 1
+0 NAND 0 = 1
+ NOT 0 = 1
+1 NAND 1 = 0
+1 NAND 0 = 1
+1 NAND 0 = 1
+Bit 4:
+  A: 1
+  B: 0
+  Step Carry: 0
+  Step Sum: 1
+
+1 NAND 0 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+1 AND 0 = 0
+1 NAND 1 = 0
+ NOT 1 = 0
+0 NAND 0 = 1
+0 NAND 0 = 1
+ NOT 0 = 1
+1 NAND 1 = 0
+1 NAND 0 = 1
+1 NAND 0 = 1
+Bit 5:
+  A: 1
+  B: 0
+  Step Carry: 0
+  Step Sum: 1
+
+1 NAND 0 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+1 AND 0 = 0
+1 NAND 1 = 0
+ NOT 1 = 0
+0 NAND 0 = 1
+0 NAND 0 = 1
+ NOT 0 = 1
+1 NAND 1 = 0
+1 NAND 0 = 1
+1 NAND 0 = 1
+Bit 6:
+  A: 1
+  B: 0
+  Step Carry: 0
+  Step Sum: 1
+
+1 NAND 0 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+1 AND 0 = 0
+1 NAND 1 = 0
+ NOT 1 = 0
+0 NAND 0 = 1
+0 NAND 0 = 1
+ NOT 0 = 1
+1 NAND 1 = 0
+1 NAND 0 = 1
+1 NAND 0 = 1
+Bit 7:
+  A: 1
+  B: 0
+  Step Carry: 0
+  Step Sum: 1
+
+
+[Shift Left] Input: 00000000 | Shifts: 1
+ -> Padded: 8 bits -> 8 bits
+ -> Padded State: 00000000
+   Shift 1: 00000000
+ Output: 00000000
+  Accumulated Sum  : 11111111
+  Shifted Carry Out: 00000000
+
+
+[Binary -> Decimal] Input: 00000000
+   Bit [7] weight: 2^0 = 1
+   Bit [6] weight: 2^1 = 2
+   Bit [5] weight: 2^2 = 4
+   Bit [4] weight: 2^3 = 8
+   Bit [3] weight: 2^4 = 16
+   Bit [2] weight: 2^5 = 32
+   Bit [1] weight: 2^6 = 64
+   Bit [0] weight: 2^7 = 128
+ -> Grid size: 8 bits
+   Bit [7] = '0' (skip)
+   Bit [6] = '0' (skip)
+   Bit [5] = '0' (skip)
+   Bit [4] = '0' (skip)
+   Bit [3] = '0' (skip)
+   Bit [2] = '0' (skip)
+   Bit [1] = '0' (skip)
+   Bit [0] = '0' (skip)
+ Output: 0
+Output  = 11111111
+ -> Performing binary addition: A + (Two's Complement of B)
+ALU ADDITION INITIALIZED
+Input_1 = 00000001
+Input_2 = 11111111
+
+
+
+[Binary -> Decimal] Input: 11111111
+   Bit [7] weight: 2^0 = 1
+   Bit [6] weight: 2^1 = 2
+   Bit [5] weight: 2^2 = 4
+   Bit [4] weight: 2^3 = 8
+   Bit [3] weight: 2^4 = 16
+   Bit [2] weight: 2^5 = 32
+   Bit [1] weight: 2^6 = 64
+   Bit [0] weight: 2^7 = 128
+ -> Grid size: 8 bits
+   Bit [7] = '1' (+1) -> Total: 1
+   Bit [6] = '1' (+2) -> Total: 3
+   Bit [5] = '1' (+4) -> Total: 7
+   Bit [4] = '1' (+8) -> Total: 15
+   Bit [3] = '1' (+16) -> Total: 31
+   Bit [2] = '1' (+32) -> Total: 63
+   Bit [1] = '1' (+64) -> Total: 127
+   Bit [0] = '1' (+128) -> Total: 255
+ Output: 255
+
+[Binary -> Decimal] Input: 11111111
+   Bit [7] weight: 2^0 = 1
+   Bit [6] weight: 2^1 = 2
+   Bit [5] weight: 2^2 = 4
+   Bit [4] weight: 2^3 = 8
+   Bit [3] weight: 2^4 = 16
+   Bit [2] weight: 2^5 = 32
+   Bit [1] weight: 2^6 = 64
+   Bit [0] weight: 2^7 = 128
+ -> Grid size: 8 bits
+   Bit [7] = '1' (+1) -> Total: 1
+   Bit [6] = '1' (+2) -> Total: 3
+   Bit [5] = '1' (+4) -> Total: 7
+   Bit [4] = '1' (+8) -> Total: 15
+   Bit [3] = '1' (+16) -> Total: 31
+   Bit [2] = '1' (+32) -> Total: 63
+   Bit [1] = '1' (+64) -> Total: 127
+   Bit [0] = '1' (+128) -> Total: 255
+ Output: 255
+--- Addition Accumulation Cycle 1 ---
+1 NAND 1 = 0
+0 NAND 0 = 1
+ NOT 0 = 1
+1 AND 1 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+0 NAND 1 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+1 NAND 0 = 1
+1 NAND 1 = 0
+1 NAND 1 = 0
+Bit 0:
+  A: 1
+  B: 1
+  Step Carry: 1
+  Step Sum: 0
+
+0 NAND 1 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+0 AND 1 = 0
+0 NAND 0 = 1
+ NOT 0 = 1
+1 NAND 1 = 0
+1 NAND 1 = 0
+ NOT 1 = 0
+0 NAND 0 = 1
+0 NAND 1 = 1
+0 NAND 1 = 1
+Bit 1:
+  A: 0
+  B: 1
+  Step Carry: 0
+  Step Sum: 1
+
+0 NAND 1 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+0 AND 1 = 0
+0 NAND 0 = 1
+ NOT 0 = 1
+1 NAND 1 = 0
+1 NAND 1 = 0
+ NOT 1 = 0
+0 NAND 0 = 1
+0 NAND 1 = 1
+0 NAND 1 = 1
+Bit 2:
+  A: 0
+  B: 1
+  Step Carry: 0
+  Step Sum: 1
+
+0 NAND 1 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+0 AND 1 = 0
+0 NAND 0 = 1
+ NOT 0 = 1
+1 NAND 1 = 0
+1 NAND 1 = 0
+ NOT 1 = 0
+0 NAND 0 = 1
+0 NAND 1 = 1
+0 NAND 1 = 1
+Bit 3:
+  A: 0
+  B: 1
+  Step Carry: 0
+  Step Sum: 1
+
+0 NAND 1 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+0 AND 1 = 0
+0 NAND 0 = 1
+ NOT 0 = 1
+1 NAND 1 = 0
+1 NAND 1 = 0
+ NOT 1 = 0
+0 NAND 0 = 1
+0 NAND 1 = 1
+0 NAND 1 = 1
+Bit 4:
+  A: 0
+  B: 1
+  Step Carry: 0
+  Step Sum: 1
+
+0 NAND 1 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+0 AND 1 = 0
+0 NAND 0 = 1
+ NOT 0 = 1
+1 NAND 1 = 0
+1 NAND 1 = 0
+ NOT 1 = 0
+0 NAND 0 = 1
+0 NAND 1 = 1
+0 NAND 1 = 1
+Bit 5:
+  A: 0
+  B: 1
+  Step Carry: 0
+  Step Sum: 1
+
+0 NAND 1 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+0 AND 1 = 0
+0 NAND 0 = 1
+ NOT 0 = 1
+1 NAND 1 = 0
+1 NAND 1 = 0
+ NOT 1 = 0
+0 NAND 0 = 1
+0 NAND 1 = 1
+0 NAND 1 = 1
+Bit 6:
+  A: 0
+  B: 1
+  Step Carry: 0
+  Step Sum: 1
+
+0 NAND 1 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+0 AND 1 = 0
+0 NAND 0 = 1
+ NOT 0 = 1
+1 NAND 1 = 0
+1 NAND 1 = 0
+ NOT 1 = 0
+0 NAND 0 = 1
+0 NAND 1 = 1
+0 NAND 1 = 1
+Bit 7:
+  A: 0
+  B: 1
+  Step Carry: 0
+  Step Sum: 1
+
+
+[Shift Left] Input: 00000001 | Shifts: 1
+ -> Padded: 8 bits -> 8 bits
+ -> Padded State: 00000001
+   Shift 1: 00000010
+ Output: 00000010
+  Accumulated Sum  : 11111110
+  Shifted Carry Out: 00000010
+
+
+[Binary -> Decimal] Input: 00000010
+   Bit [7] weight: 2^0 = 1
+   Bit [6] weight: 2^1 = 2
+   Bit [5] weight: 2^2 = 4
+   Bit [4] weight: 2^3 = 8
+   Bit [3] weight: 2^4 = 16
+   Bit [2] weight: 2^5 = 32
+   Bit [1] weight: 2^6 = 64
+   Bit [0] weight: 2^7 = 128
+ -> Grid size: 8 bits
+   Bit [7] = '0' (skip)
+   Bit [6] = '1' (+2) -> Total: 2
+   Bit [5] = '0' (skip)
+   Bit [4] = '0' (skip)
+   Bit [3] = '0' (skip)
+   Bit [2] = '0' (skip)
+   Bit [1] = '0' (skip)
+   Bit [0] = '0' (skip)
+ Output: 2
+--- Addition Accumulation Cycle 2 ---
+0 NAND 0 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+0 AND 0 = 0
+0 NAND 0 = 1
+ NOT 0 = 1
+1 NAND 0 = 1
+0 NAND 0 = 1
+ NOT 0 = 1
+0 NAND 1 = 1
+1 NAND 1 = 0
+0 NAND 0 = 0
+Bit 0:
+  A: 0
+  B: 0
+  Step Carry: 0
+  Step Sum: 0
+
+1 NAND 1 = 0
+0 NAND 0 = 1
+ NOT 0 = 1
+1 AND 1 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+0 NAND 1 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+1 NAND 0 = 1
+1 NAND 1 = 0
+1 NAND 1 = 0
+Bit 1:
+  A: 1
+  B: 1
+  Step Carry: 1
+  Step Sum: 0
+
+1 NAND 0 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+1 AND 0 = 0
+1 NAND 1 = 0
+ NOT 1 = 0
+0 NAND 0 = 1
+0 NAND 0 = 1
+ NOT 0 = 1
+1 NAND 1 = 0
+1 NAND 0 = 1
+1 NAND 0 = 1
+Bit 2:
+  A: 1
+  B: 0
+  Step Carry: 0
+  Step Sum: 1
+
+1 NAND 0 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+1 AND 0 = 0
+1 NAND 1 = 0
+ NOT 1 = 0
+0 NAND 0 = 1
+0 NAND 0 = 1
+ NOT 0 = 1
+1 NAND 1 = 0
+1 NAND 0 = 1
+1 NAND 0 = 1
+Bit 3:
+  A: 1
+  B: 0
+  Step Carry: 0
+  Step Sum: 1
+
+1 NAND 0 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+1 AND 0 = 0
+1 NAND 1 = 0
+ NOT 1 = 0
+0 NAND 0 = 1
+0 NAND 0 = 1
+ NOT 0 = 1
+1 NAND 1 = 0
+1 NAND 0 = 1
+1 NAND 0 = 1
+Bit 4:
+  A: 1
+  B: 0
+  Step Carry: 0
+  Step Sum: 1
+
+1 NAND 0 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+1 AND 0 = 0
+1 NAND 1 = 0
+ NOT 1 = 0
+0 NAND 0 = 1
+0 NAND 0 = 1
+ NOT 0 = 1
+1 NAND 1 = 0
+1 NAND 0 = 1
+1 NAND 0 = 1
+Bit 5:
+  A: 1
+  B: 0
+  Step Carry: 0
+  Step Sum: 1
+
+1 NAND 0 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+1 AND 0 = 0
+1 NAND 1 = 0
+ NOT 1 = 0
+0 NAND 0 = 1
+0 NAND 0 = 1
+ NOT 0 = 1
+1 NAND 1 = 0
+1 NAND 0 = 1
+1 NAND 0 = 1
+Bit 6:
+  A: 1
+  B: 0
+  Step Carry: 0
+  Step Sum: 1
+
+1 NAND 0 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+1 AND 0 = 0
+1 NAND 1 = 0
+ NOT 1 = 0
+0 NAND 0 = 1
+0 NAND 0 = 1
+ NOT 0 = 1
+1 NAND 1 = 0
+1 NAND 0 = 1
+1 NAND 0 = 1
+Bit 7:
+  A: 1
+  B: 0
+  Step Carry: 0
+  Step Sum: 1
+
+
+[Shift Left] Input: 00000010 | Shifts: 1
+ -> Padded: 8 bits -> 8 bits
+ -> Padded State: 00000010
+   Shift 1: 00000100
+ Output: 00000100
+  Accumulated Sum  : 11111100
+  Shifted Carry Out: 00000100
+
+
+[Binary -> Decimal] Input: 00000100
+   Bit [7] weight: 2^0 = 1
+   Bit [6] weight: 2^1 = 2
+   Bit [5] weight: 2^2 = 4
+   Bit [4] weight: 2^3 = 8
+   Bit [3] weight: 2^4 = 16
+   Bit [2] weight: 2^5 = 32
+   Bit [1] weight: 2^6 = 64
+   Bit [0] weight: 2^7 = 128
+ -> Grid size: 8 bits
+   Bit [7] = '0' (skip)
+   Bit [6] = '0' (skip)
+   Bit [5] = '1' (+4) -> Total: 4
+   Bit [4] = '0' (skip)
+   Bit [3] = '0' (skip)
+   Bit [2] = '0' (skip)
+   Bit [1] = '0' (skip)
+   Bit [0] = '0' (skip)
+ Output: 4
+--- Addition Accumulation Cycle 3 ---
+0 NAND 0 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+0 AND 0 = 0
+0 NAND 0 = 1
+ NOT 0 = 1
+1 NAND 0 = 1
+0 NAND 0 = 1
+ NOT 0 = 1
+0 NAND 1 = 1
+1 NAND 1 = 0
+0 NAND 0 = 0
+Bit 0:
+  A: 0
+  B: 0
+  Step Carry: 0
+  Step Sum: 0
+
+0 NAND 0 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+0 AND 0 = 0
+0 NAND 0 = 1
+ NOT 0 = 1
+1 NAND 0 = 1
+0 NAND 0 = 1
+ NOT 0 = 1
+0 NAND 1 = 1
+1 NAND 1 = 0
+0 NAND 0 = 0
+Bit 1:
+  A: 0
+  B: 0
+  Step Carry: 0
+  Step Sum: 0
+
+1 NAND 1 = 0
+0 NAND 0 = 1
+ NOT 0 = 1
+1 AND 1 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+0 NAND 1 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+1 NAND 0 = 1
+1 NAND 1 = 0
+1 NAND 1 = 0
+Bit 2:
+  A: 1
+  B: 1
+  Step Carry: 1
+  Step Sum: 0
+
+1 NAND 0 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+1 AND 0 = 0
+1 NAND 1 = 0
+ NOT 1 = 0
+0 NAND 0 = 1
+0 NAND 0 = 1
+ NOT 0 = 1
+1 NAND 1 = 0
+1 NAND 0 = 1
+1 NAND 0 = 1
+Bit 3:
+  A: 1
+  B: 0
+  Step Carry: 0
+  Step Sum: 1
+
+1 NAND 0 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+1 AND 0 = 0
+1 NAND 1 = 0
+ NOT 1 = 0
+0 NAND 0 = 1
+0 NAND 0 = 1
+ NOT 0 = 1
+1 NAND 1 = 0
+1 NAND 0 = 1
+1 NAND 0 = 1
+Bit 4:
+  A: 1
+  B: 0
+  Step Carry: 0
+  Step Sum: 1
+
+1 NAND 0 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+1 AND 0 = 0
+1 NAND 1 = 0
+ NOT 1 = 0
+0 NAND 0 = 1
+0 NAND 0 = 1
+ NOT 0 = 1
+1 NAND 1 = 0
+1 NAND 0 = 1
+1 NAND 0 = 1
+Bit 5:
+  A: 1
+  B: 0
+  Step Carry: 0
+  Step Sum: 1
+
+1 NAND 0 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+1 AND 0 = 0
+1 NAND 1 = 0
+ NOT 1 = 0
+0 NAND 0 = 1
+0 NAND 0 = 1
+ NOT 0 = 1
+1 NAND 1 = 0
+1 NAND 0 = 1
+1 NAND 0 = 1
+Bit 6:
+  A: 1
+  B: 0
+  Step Carry: 0
+  Step Sum: 1
+
+1 NAND 0 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+1 AND 0 = 0
+1 NAND 1 = 0
+ NOT 1 = 0
+0 NAND 0 = 1
+0 NAND 0 = 1
+ NOT 0 = 1
+1 NAND 1 = 0
+1 NAND 0 = 1
+1 NAND 0 = 1
+Bit 7:
+  A: 1
+  B: 0
+  Step Carry: 0
+  Step Sum: 1
+
+
+[Shift Left] Input: 00000100 | Shifts: 1
+ -> Padded: 8 bits -> 8 bits
+ -> Padded State: 00000100
+   Shift 1: 00001000
+ Output: 00001000
+  Accumulated Sum  : 11111000
+  Shifted Carry Out: 00001000
+
+
+[Binary -> Decimal] Input: 00001000
+   Bit [7] weight: 2^0 = 1
+   Bit [6] weight: 2^1 = 2
+   Bit [5] weight: 2^2 = 4
+   Bit [4] weight: 2^3 = 8
+   Bit [3] weight: 2^4 = 16
+   Bit [2] weight: 2^5 = 32
+   Bit [1] weight: 2^6 = 64
+   Bit [0] weight: 2^7 = 128
+ -> Grid size: 8 bits
+   Bit [7] = '0' (skip)
+   Bit [6] = '0' (skip)
+   Bit [5] = '0' (skip)
+   Bit [4] = '1' (+8) -> Total: 8
+   Bit [3] = '0' (skip)
+   Bit [2] = '0' (skip)
+   Bit [1] = '0' (skip)
+   Bit [0] = '0' (skip)
+ Output: 8
+--- Addition Accumulation Cycle 4 ---
+0 NAND 0 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+0 AND 0 = 0
+0 NAND 0 = 1
+ NOT 0 = 1
+1 NAND 0 = 1
+0 NAND 0 = 1
+ NOT 0 = 1
+0 NAND 1 = 1
+1 NAND 1 = 0
+0 NAND 0 = 0
+Bit 0:
+  A: 0
+  B: 0
+  Step Carry: 0
+  Step Sum: 0
+
+0 NAND 0 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+0 AND 0 = 0
+0 NAND 0 = 1
+ NOT 0 = 1
+1 NAND 0 = 1
+0 NAND 0 = 1
+ NOT 0 = 1
+0 NAND 1 = 1
+1 NAND 1 = 0
+0 NAND 0 = 0
+Bit 1:
+  A: 0
+  B: 0
+  Step Carry: 0
+  Step Sum: 0
+
+0 NAND 0 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+0 AND 0 = 0
+0 NAND 0 = 1
+ NOT 0 = 1
+1 NAND 0 = 1
+0 NAND 0 = 1
+ NOT 0 = 1
+0 NAND 1 = 1
+1 NAND 1 = 0
+0 NAND 0 = 0
+Bit 2:
+  A: 0
+  B: 0
+  Step Carry: 0
+  Step Sum: 0
+
+1 NAND 1 = 0
+0 NAND 0 = 1
+ NOT 0 = 1
+1 AND 1 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+0 NAND 1 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+1 NAND 0 = 1
+1 NAND 1 = 0
+1 NAND 1 = 0
+Bit 3:
+  A: 1
+  B: 1
+  Step Carry: 1
+  Step Sum: 0
+
+1 NAND 0 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+1 AND 0 = 0
+1 NAND 1 = 0
+ NOT 1 = 0
+0 NAND 0 = 1
+0 NAND 0 = 1
+ NOT 0 = 1
+1 NAND 1 = 0
+1 NAND 0 = 1
+1 NAND 0 = 1
+Bit 4:
+  A: 1
+  B: 0
+  Step Carry: 0
+  Step Sum: 1
+
+1 NAND 0 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+1 AND 0 = 0
+1 NAND 1 = 0
+ NOT 1 = 0
+0 NAND 0 = 1
+0 NAND 0 = 1
+ NOT 0 = 1
+1 NAND 1 = 0
+1 NAND 0 = 1
+1 NAND 0 = 1
+Bit 5:
+  A: 1
+  B: 0
+  Step Carry: 0
+  Step Sum: 1
+
+1 NAND 0 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+1 AND 0 = 0
+1 NAND 1 = 0
+ NOT 1 = 0
+0 NAND 0 = 1
+0 NAND 0 = 1
+ NOT 0 = 1
+1 NAND 1 = 0
+1 NAND 0 = 1
+1 NAND 0 = 1
+Bit 6:
+  A: 1
+  B: 0
+  Step Carry: 0
+  Step Sum: 1
+
+1 NAND 0 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+1 AND 0 = 0
+1 NAND 1 = 0
+ NOT 1 = 0
+0 NAND 0 = 1
+0 NAND 0 = 1
+ NOT 0 = 1
+1 NAND 1 = 0
+1 NAND 0 = 1
+1 NAND 0 = 1
+Bit 7:
+  A: 1
+  B: 0
+  Step Carry: 0
+  Step Sum: 1
+
+
+[Shift Left] Input: 00001000 | Shifts: 1
+ -> Padded: 8 bits -> 8 bits
+ -> Padded State: 00001000
+   Shift 1: 00010000
+ Output: 00010000
+  Accumulated Sum  : 11110000
+  Shifted Carry Out: 00010000
+
+
+[Binary -> Decimal] Input: 00010000
+   Bit [7] weight: 2^0 = 1
+   Bit [6] weight: 2^1 = 2
+   Bit [5] weight: 2^2 = 4
+   Bit [4] weight: 2^3 = 8
+   Bit [3] weight: 2^4 = 16
+   Bit [2] weight: 2^5 = 32
+   Bit [1] weight: 2^6 = 64
+   Bit [0] weight: 2^7 = 128
+ -> Grid size: 8 bits
+   Bit [7] = '0' (skip)
+   Bit [6] = '0' (skip)
+   Bit [5] = '0' (skip)
+   Bit [4] = '0' (skip)
+   Bit [3] = '1' (+16) -> Total: 16
+   Bit [2] = '0' (skip)
+   Bit [1] = '0' (skip)
+   Bit [0] = '0' (skip)
+ Output: 16
+--- Addition Accumulation Cycle 5 ---
+0 NAND 0 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+0 AND 0 = 0
+0 NAND 0 = 1
+ NOT 0 = 1
+1 NAND 0 = 1
+0 NAND 0 = 1
+ NOT 0 = 1
+0 NAND 1 = 1
+1 NAND 1 = 0
+0 NAND 0 = 0
+Bit 0:
+  A: 0
+  B: 0
+  Step Carry: 0
+  Step Sum: 0
+
+0 NAND 0 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+0 AND 0 = 0
+0 NAND 0 = 1
+ NOT 0 = 1
+1 NAND 0 = 1
+0 NAND 0 = 1
+ NOT 0 = 1
+0 NAND 1 = 1
+1 NAND 1 = 0
+0 NAND 0 = 0
+Bit 1:
+  A: 0
+  B: 0
+  Step Carry: 0
+  Step Sum: 0
+
+0 NAND 0 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+0 AND 0 = 0
+0 NAND 0 = 1
+ NOT 0 = 1
+1 NAND 0 = 1
+0 NAND 0 = 1
+ NOT 0 = 1
+0 NAND 1 = 1
+1 NAND 1 = 0
+0 NAND 0 = 0
+Bit 2:
+  A: 0
+  B: 0
+  Step Carry: 0
+  Step Sum: 0
+
+0 NAND 0 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+0 AND 0 = 0
+0 NAND 0 = 1
+ NOT 0 = 1
+1 NAND 0 = 1
+0 NAND 0 = 1
+ NOT 0 = 1
+0 NAND 1 = 1
+1 NAND 1 = 0
+0 NAND 0 = 0
+Bit 3:
+  A: 0
+  B: 0
+  Step Carry: 0
+  Step Sum: 0
+
+1 NAND 1 = 0
+0 NAND 0 = 1
+ NOT 0 = 1
+1 AND 1 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+0 NAND 1 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+1 NAND 0 = 1
+1 NAND 1 = 0
+1 NAND 1 = 0
+Bit 4:
+  A: 1
+  B: 1
+  Step Carry: 1
+  Step Sum: 0
+
+1 NAND 0 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+1 AND 0 = 0
+1 NAND 1 = 0
+ NOT 1 = 0
+0 NAND 0 = 1
+0 NAND 0 = 1
+ NOT 0 = 1
+1 NAND 1 = 0
+1 NAND 0 = 1
+1 NAND 0 = 1
+Bit 5:
+  A: 1
+  B: 0
+  Step Carry: 0
+  Step Sum: 1
+
+1 NAND 0 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+1 AND 0 = 0
+1 NAND 1 = 0
+ NOT 1 = 0
+0 NAND 0 = 1
+0 NAND 0 = 1
+ NOT 0 = 1
+1 NAND 1 = 0
+1 NAND 0 = 1
+1 NAND 0 = 1
+Bit 6:
+  A: 1
+  B: 0
+  Step Carry: 0
+  Step Sum: 1
+
+1 NAND 0 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+1 AND 0 = 0
+1 NAND 1 = 0
+ NOT 1 = 0
+0 NAND 0 = 1
+0 NAND 0 = 1
+ NOT 0 = 1
+1 NAND 1 = 0
+1 NAND 0 = 1
+1 NAND 0 = 1
+Bit 7:
+  A: 1
+  B: 0
+  Step Carry: 0
+  Step Sum: 1
+
+
+[Shift Left] Input: 00010000 | Shifts: 1
+ -> Padded: 8 bits -> 8 bits
+ -> Padded State: 00010000
+   Shift 1: 00100000
+ Output: 00100000
+  Accumulated Sum  : 11100000
+  Shifted Carry Out: 00100000
+
+
+[Binary -> Decimal] Input: 00100000
+   Bit [7] weight: 2^0 = 1
+   Bit [6] weight: 2^1 = 2
+   Bit [5] weight: 2^2 = 4
+   Bit [4] weight: 2^3 = 8
+   Bit [3] weight: 2^4 = 16
+   Bit [2] weight: 2^5 = 32
+   Bit [1] weight: 2^6 = 64
+   Bit [0] weight: 2^7 = 128
+ -> Grid size: 8 bits
+   Bit [7] = '0' (skip)
+   Bit [6] = '0' (skip)
+   Bit [5] = '0' (skip)
+   Bit [4] = '0' (skip)
+   Bit [3] = '0' (skip)
+   Bit [2] = '1' (+32) -> Total: 32
+   Bit [1] = '0' (skip)
+   Bit [0] = '0' (skip)
+ Output: 32
+--- Addition Accumulation Cycle 6 ---
+0 NAND 0 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+0 AND 0 = 0
+0 NAND 0 = 1
+ NOT 0 = 1
+1 NAND 0 = 1
+0 NAND 0 = 1
+ NOT 0 = 1
+0 NAND 1 = 1
+1 NAND 1 = 0
+0 NAND 0 = 0
+Bit 0:
+  A: 0
+  B: 0
+  Step Carry: 0
+  Step Sum: 0
+
+0 NAND 0 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+0 AND 0 = 0
+0 NAND 0 = 1
+ NOT 0 = 1
+1 NAND 0 = 1
+0 NAND 0 = 1
+ NOT 0 = 1
+0 NAND 1 = 1
+1 NAND 1 = 0
+0 NAND 0 = 0
+Bit 1:
+  A: 0
+  B: 0
+  Step Carry: 0
+  Step Sum: 0
+
+0 NAND 0 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+0 AND 0 = 0
+0 NAND 0 = 1
+ NOT 0 = 1
+1 NAND 0 = 1
+0 NAND 0 = 1
+ NOT 0 = 1
+0 NAND 1 = 1
+1 NAND 1 = 0
+0 NAND 0 = 0
+Bit 2:
+  A: 0
+  B: 0
+  Step Carry: 0
+  Step Sum: 0
+
+0 NAND 0 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+0 AND 0 = 0
+0 NAND 0 = 1
+ NOT 0 = 1
+1 NAND 0 = 1
+0 NAND 0 = 1
+ NOT 0 = 1
+0 NAND 1 = 1
+1 NAND 1 = 0
+0 NAND 0 = 0
+Bit 3:
+  A: 0
+  B: 0
+  Step Carry: 0
+  Step Sum: 0
+
+0 NAND 0 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+0 AND 0 = 0
+0 NAND 0 = 1
+ NOT 0 = 1
+1 NAND 0 = 1
+0 NAND 0 = 1
+ NOT 0 = 1
+0 NAND 1 = 1
+1 NAND 1 = 0
+0 NAND 0 = 0
+Bit 4:
+  A: 0
+  B: 0
+  Step Carry: 0
+  Step Sum: 0
+
+1 NAND 1 = 0
+0 NAND 0 = 1
+ NOT 0 = 1
+1 AND 1 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+0 NAND 1 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+1 NAND 0 = 1
+1 NAND 1 = 0
+1 NAND 1 = 0
+Bit 5:
+  A: 1
+  B: 1
+  Step Carry: 1
+  Step Sum: 0
+
+1 NAND 0 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+1 AND 0 = 0
+1 NAND 1 = 0
+ NOT 1 = 0
+0 NAND 0 = 1
+0 NAND 0 = 1
+ NOT 0 = 1
+1 NAND 1 = 0
+1 NAND 0 = 1
+1 NAND 0 = 1
+Bit 6:
+  A: 1
+  B: 0
+  Step Carry: 0
+  Step Sum: 1
+
+1 NAND 0 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+1 AND 0 = 0
+1 NAND 1 = 0
+ NOT 1 = 0
+0 NAND 0 = 1
+0 NAND 0 = 1
+ NOT 0 = 1
+1 NAND 1 = 0
+1 NAND 0 = 1
+1 NAND 0 = 1
+Bit 7:
+  A: 1
+  B: 0
+  Step Carry: 0
+  Step Sum: 1
+
+
+[Shift Left] Input: 00100000 | Shifts: 1
+ -> Padded: 8 bits -> 8 bits
+ -> Padded State: 00100000
+   Shift 1: 01000000
+ Output: 01000000
+  Accumulated Sum  : 11000000
+  Shifted Carry Out: 01000000
+
+
+[Binary -> Decimal] Input: 01000000
+   Bit [7] weight: 2^0 = 1
+   Bit [6] weight: 2^1 = 2
+   Bit [5] weight: 2^2 = 4
+   Bit [4] weight: 2^3 = 8
+   Bit [3] weight: 2^4 = 16
+   Bit [2] weight: 2^5 = 32
+   Bit [1] weight: 2^6 = 64
+   Bit [0] weight: 2^7 = 128
+ -> Grid size: 8 bits
+   Bit [7] = '0' (skip)
+   Bit [6] = '0' (skip)
+   Bit [5] = '0' (skip)
+   Bit [4] = '0' (skip)
+   Bit [3] = '0' (skip)
+   Bit [2] = '0' (skip)
+   Bit [1] = '1' (+64) -> Total: 64
+   Bit [0] = '0' (skip)
+ Output: 64
+--- Addition Accumulation Cycle 7 ---
+0 NAND 0 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+0 AND 0 = 0
+0 NAND 0 = 1
+ NOT 0 = 1
+1 NAND 0 = 1
+0 NAND 0 = 1
+ NOT 0 = 1
+0 NAND 1 = 1
+1 NAND 1 = 0
+0 NAND 0 = 0
+Bit 0:
+  A: 0
+  B: 0
+  Step Carry: 0
+  Step Sum: 0
+
+0 NAND 0 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+0 AND 0 = 0
+0 NAND 0 = 1
+ NOT 0 = 1
+1 NAND 0 = 1
+0 NAND 0 = 1
+ NOT 0 = 1
+0 NAND 1 = 1
+1 NAND 1 = 0
+0 NAND 0 = 0
+Bit 1:
+  A: 0
+  B: 0
+  Step Carry: 0
+  Step Sum: 0
+
+0 NAND 0 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+0 AND 0 = 0
+0 NAND 0 = 1
+ NOT 0 = 1
+1 NAND 0 = 1
+0 NAND 0 = 1
+ NOT 0 = 1
+0 NAND 1 = 1
+1 NAND 1 = 0
+0 NAND 0 = 0
+Bit 2:
+  A: 0
+  B: 0
+  Step Carry: 0
+  Step Sum: 0
+
+0 NAND 0 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+0 AND 0 = 0
+0 NAND 0 = 1
+ NOT 0 = 1
+1 NAND 0 = 1
+0 NAND 0 = 1
+ NOT 0 = 1
+0 NAND 1 = 1
+1 NAND 1 = 0
+0 NAND 0 = 0
+Bit 3:
+  A: 0
+  B: 0
+  Step Carry: 0
+  Step Sum: 0
+
+0 NAND 0 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+0 AND 0 = 0
+0 NAND 0 = 1
+ NOT 0 = 1
+1 NAND 0 = 1
+0 NAND 0 = 1
+ NOT 0 = 1
+0 NAND 1 = 1
+1 NAND 1 = 0
+0 NAND 0 = 0
+Bit 4:
+  A: 0
+  B: 0
+  Step Carry: 0
+  Step Sum: 0
+
+0 NAND 0 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+0 AND 0 = 0
+0 NAND 0 = 1
+ NOT 0 = 1
+1 NAND 0 = 1
+0 NAND 0 = 1
+ NOT 0 = 1
+0 NAND 1 = 1
+1 NAND 1 = 0
+0 NAND 0 = 0
+Bit 5:
+  A: 0
+  B: 0
+  Step Carry: 0
+  Step Sum: 0
+
+1 NAND 1 = 0
+0 NAND 0 = 1
+ NOT 0 = 1
+1 AND 1 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+0 NAND 1 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+1 NAND 0 = 1
+1 NAND 1 = 0
+1 NAND 1 = 0
+Bit 6:
+  A: 1
+  B: 1
+  Step Carry: 1
+  Step Sum: 0
+
+1 NAND 0 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+1 AND 0 = 0
+1 NAND 1 = 0
+ NOT 1 = 0
+0 NAND 0 = 1
+0 NAND 0 = 1
+ NOT 0 = 1
+1 NAND 1 = 0
+1 NAND 0 = 1
+1 NAND 0 = 1
+Bit 7:
+  A: 1
+  B: 0
+  Step Carry: 0
+  Step Sum: 1
+
+
+[Shift Left] Input: 01000000 | Shifts: 1
+ -> Padded: 8 bits -> 8 bits
+ -> Padded State: 01000000
+   Shift 1: 10000000
+ Output: 10000000
+  Accumulated Sum  : 10000000
+  Shifted Carry Out: 10000000
+
+
+[Binary -> Decimal] Input: 10000000
+   Bit [7] weight: 2^0 = 1
+   Bit [6] weight: 2^1 = 2
+   Bit [5] weight: 2^2 = 4
+   Bit [4] weight: 2^3 = 8
+   Bit [3] weight: 2^4 = 16
+   Bit [2] weight: 2^5 = 32
+   Bit [1] weight: 2^6 = 64
+   Bit [0] weight: 2^7 = 128
+ -> Grid size: 8 bits
+   Bit [7] = '0' (skip)
+   Bit [6] = '0' (skip)
+   Bit [5] = '0' (skip)
+   Bit [4] = '0' (skip)
+   Bit [3] = '0' (skip)
+   Bit [2] = '0' (skip)
+   Bit [1] = '0' (skip)
+   Bit [0] = '1' (+128) -> Total: 128
+ Output: 128
+--- Addition Accumulation Cycle 8 ---
+0 NAND 0 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+0 AND 0 = 0
+0 NAND 0 = 1
+ NOT 0 = 1
+1 NAND 0 = 1
+0 NAND 0 = 1
+ NOT 0 = 1
+0 NAND 1 = 1
+1 NAND 1 = 0
+0 NAND 0 = 0
+Bit 0:
+  A: 0
+  B: 0
+  Step Carry: 0
+  Step Sum: 0
+
+0 NAND 0 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+0 AND 0 = 0
+0 NAND 0 = 1
+ NOT 0 = 1
+1 NAND 0 = 1
+0 NAND 0 = 1
+ NOT 0 = 1
+0 NAND 1 = 1
+1 NAND 1 = 0
+0 NAND 0 = 0
+Bit 1:
+  A: 0
+  B: 0
+  Step Carry: 0
+  Step Sum: 0
+
+0 NAND 0 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+0 AND 0 = 0
+0 NAND 0 = 1
+ NOT 0 = 1
+1 NAND 0 = 1
+0 NAND 0 = 1
+ NOT 0 = 1
+0 NAND 1 = 1
+1 NAND 1 = 0
+0 NAND 0 = 0
+Bit 2:
+  A: 0
+  B: 0
+  Step Carry: 0
+  Step Sum: 0
+
+0 NAND 0 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+0 AND 0 = 0
+0 NAND 0 = 1
+ NOT 0 = 1
+1 NAND 0 = 1
+0 NAND 0 = 1
+ NOT 0 = 1
+0 NAND 1 = 1
+1 NAND 1 = 0
+0 NAND 0 = 0
+Bit 3:
+  A: 0
+  B: 0
+  Step Carry: 0
+  Step Sum: 0
+
+0 NAND 0 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+0 AND 0 = 0
+0 NAND 0 = 1
+ NOT 0 = 1
+1 NAND 0 = 1
+0 NAND 0 = 1
+ NOT 0 = 1
+0 NAND 1 = 1
+1 NAND 1 = 0
+0 NAND 0 = 0
+Bit 4:
+  A: 0
+  B: 0
+  Step Carry: 0
+  Step Sum: 0
+
+0 NAND 0 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+0 AND 0 = 0
+0 NAND 0 = 1
+ NOT 0 = 1
+1 NAND 0 = 1
+0 NAND 0 = 1
+ NOT 0 = 1
+0 NAND 1 = 1
+1 NAND 1 = 0
+0 NAND 0 = 0
+Bit 5:
+  A: 0
+  B: 0
+  Step Carry: 0
+  Step Sum: 0
+
+0 NAND 0 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+0 AND 0 = 0
+0 NAND 0 = 1
+ NOT 0 = 1
+1 NAND 0 = 1
+0 NAND 0 = 1
+ NOT 0 = 1
+0 NAND 1 = 1
+1 NAND 1 = 0
+0 NAND 0 = 0
+Bit 6:
+  A: 0
+  B: 0
+  Step Carry: 0
+  Step Sum: 0
+
+1 NAND 1 = 0
+0 NAND 0 = 1
+ NOT 0 = 1
+1 AND 1 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+0 NAND 1 = 1
+1 NAND 1 = 0
+ NOT 1 = 0
+1 NAND 0 = 1
+1 NAND 1 = 0
+1 NAND 1 = 0
+Bit 7:
+  A: 1
+  B: 1
+  Step Carry: 1
+  Step Sum: 0
+
+
+[Shift Left] Input: 10000000 | Shifts: 1
+ -> Padded: 8 bits -> 8 bits
+ -> Padded State: 10000000
+   Shift 1: 00000000
+ Output: 00000000
+  Accumulated Sum  : 00000000
+  Shifted Carry Out: 00000000
+
+
+[Binary -> Decimal] Input: 00000000
+   Bit [7] weight: 2^0 = 1
+   Bit [6] weight: 2^1 = 2
+   Bit [5] weight: 2^2 = 4
+   Bit [4] weight: 2^3 = 8
+   Bit [3] weight: 2^4 = 16
+   Bit [2] weight: 2^5 = 32
+   Bit [1] weight: 2^6 = 64
+   Bit [0] weight: 2^7 = 128
+ -> Grid size: 8 bits
+   Bit [7] = '0' (skip)
+   Bit [6] = '0' (skip)
+   Bit [5] = '0' (skip)
+   Bit [4] = '0' (skip)
+   Bit [3] = '0' (skip)
+   Bit [2] = '0' (skip)
+   Bit [1] = '0' (skip)
+   Bit [0] = '0' (skip)
+ Output: 0
+Output  = 00000000
+Output  = 00000000
+
+[Binary -> Decimal] Input: 00000000
+   Bit [7] weight: 2^0 = 1
+   Bit [6] weight: 2^1 = 2
+   Bit [5] weight: 2^2 = 4
+   Bit [4] weight: 2^3 = 8
+   Bit [3] weight: 2^4 = 16
+   Bit [2] weight: 2^5 = 32
+   Bit [1] weight: 2^6 = 64
+   Bit [0] weight: 2^7 = 128
+ -> Grid size: 8 bits
+   Bit [7] = '0' (skip)
+   Bit [6] = '0' (skip)
+   Bit [5] = '0' (skip)
+   Bit [4] = '0' (skip)
+   Bit [3] = '0' (skip)
+   Bit [2] = '0' (skip)
+   Bit [1] = '0' (skip)
+   Bit [0] = '0' (skip)
+ Output: 0
+ALU Sub -> 00000001 - 00000001 = 00000000 (Decimal: 0)
+
+
+--------------------------------

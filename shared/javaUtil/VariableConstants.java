@@ -91,7 +91,6 @@ public final class VariableConstants {
     // --- UTILITIES ---
     public static final String SPINNER = "|/-\\"; 
 
-    // Replaces code execution macros with void methods
     public static void NEWLINE() {
         System.out.print("\n\n");
     }

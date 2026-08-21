@@ -1,37 +1,70 @@
 package binaryArithmetics.javaVersion.arithmetics;
+
 import static binaryArithmetics.javaVersion.arithmetics.Arithmetics.alu_add;
 import static binaryArithmetics.javaVersion.arithmetics.Arithmetics.alu_sub;
 import static binaryArithmetics.javaVersion.binary.BinaryFunctions.binaryToVariable;
-import static shared.javaUtil.VariableConstants.BOLD;
-import static shared.javaUtil.VariableConstants.FG_COLOR;
-import static shared.javaUtil.VariableConstants.FG_GREEN;
-import static shared.javaUtil.VariableConstants.LINEFEED;
-import static shared.javaUtil.VariableConstants.NEWLINE;
-import static shared.javaUtil.VariableConstants.RESET;
-import static shared.javaUtil.VariableConstants.UNDERLINE;
+import shared.javaUtil.Exposure;
+import shared.javaUtil.enums.ExposureCategory;
+import shared.javaUtil.enums.ExposureLevel;
 
 public class ArithmeticsTest {
     
     public void run() {
-        // Binary Arithmetics
-        System.out.printf(BOLD + UNDERLINE + "%c[Binary Arithmetics]" + RESET, (char) LINEFEED);
-        NEWLINE();
+        Exposure.printf(
+            ExposureCategory.TEST, ExposureLevel.LEVEL1, 
+            Exposure.BOLD + Exposure.UNDERLINE + "%c[Binary Arithmetics]" + Exposure.RESET, 
+            (char) Exposure.LINEFEED
+        );
+        Exposure.NEWLINE(ExposureCategory.TEST, ExposureLevel.LEVEL1);
 
-        String testA = "11111111";
-        String testB = "11111111";
+        String testA = "00000001";
+        String testB = "00000001";
 
-        System.out.printf("Test numbers: A " + BOLD + FG_GREEN + "%d" + RESET + " B " + BOLD + FG_COLOR(50) + "%d" + RESET, binaryToVariable(testA), binaryToVariable(testB));
-        NEWLINE();
+        // Display decimal representation of the test numbers
+        Exposure.printf(
+            ExposureCategory.TEST, ExposureLevel.LEVEL1,
+            Exposure.BOLD + "Test Numbers ->" + Exposure.RESET 
+            + " A: " + Exposure.FG_CYAN + "%d" + Exposure.RESET 
+            + " B: " + Exposure.FG_CYAN + "%d" + Exposure.RESET, 
+            binaryToVariable(testA), binaryToVariable(testB)
+        );
+        Exposure.NEWLINE(ExposureCategory.TEST, ExposureLevel.LEVEL1);
 
-        System.out.printf("Add " + BOLD + FG_GREEN + "%s" + RESET + " + " + BOLD + FG_COLOR(50) + "%s" + RESET + " = %s", testA, testB, alu_add(testA, testB));
-        NEWLINE();
+        // ALU Addition Execution
+        String addResultBinary = alu_add(testA, testB);
+        int addResultDecimal = binaryToVariable(addResultBinary);
+        
+        Exposure.printf(
+            ExposureCategory.TEST, ExposureLevel.LEVEL1,
+            Exposure.BOLD + "ALU Add ->" + Exposure.RESET 
+            + " " + Exposure.FG_CYAN + "%s" + Exposure.RESET 
+            + " + " 
+            + Exposure.FG_CYAN + "%s" + Exposure.RESET 
+            + " = " 
+            + Exposure.BOLD + Exposure.FG_GREEN + "%s" + Exposure.RESET 
+            + " (Decimal: " + Exposure.BOLD + Exposure.FG_GREEN + "%d" + Exposure.RESET + ")", 
+            testA, testB, addResultBinary, addResultDecimal
+        );
+        Exposure.NEWLINE(ExposureCategory.TEST, ExposureLevel.LEVEL1);
 
-        System.out.printf("%d", binaryToVariable(alu_add(testA, testB)));
-        NEWLINE();
+        // ALU Subtraction Execution
+        String subResultBinary = alu_sub(testA, testB);
+        int subResultDecimal = binaryToVariable(subResultBinary);
 
-        System.out.printf("Sub " + BOLD + FG_GREEN + "%s" + RESET + " - " + BOLD + FG_COLOR(50) + "%s" + RESET + " = %s", testA, testB, alu_sub(testA, testB));
-        NEWLINE();
-        System.out.printf("%d", binaryToVariable(alu_sub(testA, testB)));
-        NEWLINE();
+        Exposure.printf(
+            ExposureCategory.TEST, ExposureLevel.LEVEL1,
+            Exposure.BOLD + "ALU Sub ->" + Exposure.RESET 
+            + " " + Exposure.FG_CYAN + "%s" + Exposure.RESET 
+            + " - " 
+            + Exposure.FG_CYAN + "%s" + Exposure.RESET 
+            + " = " 
+            + Exposure.BOLD + Exposure.FG_GREEN + "%s" + Exposure.RESET 
+            + " (Decimal: " + Exposure.BOLD + Exposure.FG_GREEN + "%d" + Exposure.RESET + ")", 
+            testA, testB, subResultBinary, subResultDecimal
+        );
+        Exposure.NEWLINE(ExposureCategory.TEST, ExposureLevel.LEVEL1);
+
+        // Closing boundary spacer
+        Exposure.LINEBREAK(ExposureCategory.TEST, ExposureLevel.LEVEL1);
     }
 }

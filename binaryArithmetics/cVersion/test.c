@@ -2,84 +2,176 @@
 #include <string.h>
 #include <stdlib.h>
 
-#include "../shared/cHeaders/VariableConstants.h"
-#include "cVersion/binary/binary.h"
-#include "cVersion/bitwise/bitwiseLogic.h"
-#include "cVersion/arithmetics/arithmetics.h"
+#include "Exposure.h"
+#include "ExposureLevel.h"
+#include "binary/binary.h"
+#include "bitwise/bitwiseLogic.h"
+#include "arithmetics/arithmetics.h"
 
 void testLogicDoubleInput(char logicType[], short (*logic)(short, short));
 void testLogicSingleInput(char logicType[], short (*logic)(short));
+
+void bitwiseTest();
+void binaryTest();
+void arithmeticTest();
 
 // argv[1] = binary
 // argv[2], argv[3] = bitA, bitB
 int main(int argc, char* argv[]) {
 
-    // Binary Operations
-    printf(BOLD UNDERLINE "%c[Binary Operations]" RESET, LINEFEED);
-    NEWLINE;
+    ExposureLevel level = LEVEL1;
 
-    char *inputString = "00000000";
-
+    // 1. Set Exposure Level from argv[1]
     if (argc >= 2) {
-        inputString = argv[1];
+        int parsedLevel = atoi(argv[1]);
+        if (parsedLevel >= LEVEL1 && parsedLevel <= LEVEL5) {
+            level = (ExposureLevel)parsedLevel;
+        }
     }
+    setExposureLevel(level);
+
+    bitwiseTest();
+
+    binaryTest();
+
+    arithmeticTest();
     
-    int binaryLength = strlen(inputString) + 1;
+    return 0;
+}
 
-    char originalBinary[binaryLength];
-    strcpy(originalBinary, inputString);
-    
-    printf("Original binary: " BOLD FG_GREEN "%s" RESET " Value: " BOLD FG_COLOR(50) "%d" RESET, originalBinary, binaryToVariable(originalBinary));
-    NEWLINE;
+void bitwiseTest() {
+    ExposurePrintf(
+        LEVEL1, 
+        BOLD UNDERLINE "%c[Bitwise Operations]" RESET, 
+        LINEFEED
+    );
+    ExposureNewline(LEVEL1);
 
-    char shiftleftBinary[binaryLength];
-    strcpy(shiftleftBinary, originalBinary);
-    shiftLeft(shiftleftBinary);
+    testLogicDoubleInput("NAND", NAND);
+    ExposureNewline(LEVEL1);
 
-    printf("Binary after shift Left: " BOLD FG_GREEN "%s" RESET " Value: " BOLD FG_COLOR(50) "%d" RESET, shiftleftBinary, binaryToVariable(shiftleftBinary));
-    NEWLINE;
-
-    char flipBinary[binaryLength];
-    strcpy(flipBinary, shiftleftBinary);
-    flip(flipBinary);
-
-    printf("Binary after flipping: " BOLD FG_GREEN "%s" RESET " Value: " BOLD FG_COLOR(50) "%d" RESET, flipBinary, binaryToVariable(flipBinary));
-    NEWLINE;
-    LINEBREAK;
-
-    // Bitwise Logic
-    printf(BOLD UNDERLINE "%c[Bitwise Operations]" RESET, LINEFEED);
-    NEWLINE;
+    testLogicSingleInput("NOT", NOT);
+    ExposureNewline(LEVEL1);
 
     testLogicDoubleInput("AND", AND);
-    NEWLINE;
+    ExposureNewline(LEVEL1);
+
     testLogicDoubleInput("OR", OR);
-    NEWLINE;
+    ExposureNewline(LEVEL1);
+
     testLogicDoubleInput("XOR", XOR);
-    NEWLINE;
-    testLogicDoubleInput("NAND", NAND);
-    NEWLINE;
-    testLogicSingleInput("NOT", NOT);
-    NEWLINE;
+    ExposureNewline(LEVEL1);
 
-    // Binary Arithmetics
-    printf(BOLD UNDERLINE "%c[Binary Arithmetics]" RESET, LINEFEED);
-    NEWLINE;
+    ExposureLinebreak(LEVEL1);
+}
 
-    char testA[] = "00001111";
-    char testB[] = "00000011";
+void binaryTest() {
+    ExposurePrintf(
+        LEVEL1, 
+        BOLD UNDERLINE "%c[Binary Operations]" RESET, 
+        LINEFEED
+    );
+    ExposureNewline(LEVEL1);
 
-    printf("Add = %s", alu_add(testA, testB));
-    NEWLINE;
-    printf("%d", binaryToVariable(alu_add(testA, testB)));
-    NEWLINE;
+    char testBinary[] = "111100111";
 
-    printf("Sub = %s", alu_sub(testA, testB));
-    NEWLINE;
-    printf("%d", binaryToVariable(alu_sub(testA, testB)));
-    NEWLINE;
+    int varValue = binaryToVariable(testBinary);
+    ExposurePrintf(
+        LEVEL1, 
+        BOLD "Binary to Variable ->" RESET 
+        " Input: " FG_CYAN "%s" RESET 
+        " Result: " BOLD FG_GREEN "%d" RESET, 
+        testBinary, varValue
+    );
+    ExposureNewline(LEVEL1);
 
-    return 0;
+    int binaryLength = strlen(testBinary) + 1;
+    char shiftleftBinary[binaryLength];
+    strcpy(shiftleftBinary, testBinary);
+    shiftLeft(shiftleftBinary);
+
+    ExposurePrintf(
+        LEVEL1, 
+        BOLD "Shift Left ->" RESET 
+        " Input: " FG_CYAN "%s" RESET 
+        " Result: " BOLD FG_GREEN "%s" RESET, 
+        testBinary, shiftleftBinary
+    );
+    ExposureNewline(LEVEL1);
+
+    char flipBinary[binaryLength];
+    strcpy(flipBinary, testBinary);
+    flip(flipBinary);
+
+    ExposurePrintf(
+        LEVEL1, 
+        BOLD "Flip Bits ->" RESET 
+        " Input: " FG_CYAN "%s" RESET 
+        " Result: " BOLD FG_GREEN "%s" RESET, 
+        testBinary, flipBinary
+    );
+    ExposureNewline(LEVEL1);
+
+    ExposureLinebreak(LEVEL1);
+}
+
+void arithmeticTest() {
+    // Main Category Header Block
+    ExposurePrintf(
+        LEVEL1, 
+        "%s%s%c[Binary Arithmetics]%s", 
+        BOLD, UNDERLINE, (char)LINEFEED, RESET
+    );
+    ExposureNewline(LEVEL1);
+
+    // Initial testing input frameworks (8-bit width allocation matching Java test profiles)
+    char testA[9] = "11111111";
+    char testB[9] = "11111111";
+
+    // Trace out decimal translation summaries of incoming test parameters
+    ExposurePrintf(
+        LEVEL1,
+        "%sTest Numbers ->%s A: %s%d%s B: %s%d%s\n", 
+        BOLD, RESET, 
+        FG_CYAN, binaryToVariable(testA), RESET, 
+        FG_CYAN, binaryToVariable(testB), RESET
+    );
+    ExposureNewline(LEVEL1);
+
+    // --- 1. ALU Addition Evaluation ---
+    char* addResultBinary = alu_add(testA, testB);
+    int addResultDecimal = binaryToVariable(addResultBinary);
+    
+    ExposurePrintf(
+        LEVEL1,
+        "%sALU Add ->%s %s%s%s + %s%s%s = %s%s%s%s (Decimal: %s%s%d%s)\n", 
+        BOLD, RESET, 
+        FG_CYAN, testA, RESET, 
+        FG_CYAN, testB, RESET, 
+        BOLD, FG_GREEN, addResultBinary, RESET, 
+        BOLD, FG_GREEN, addResultDecimal, RESET
+    );
+    ExposureNewline(LEVEL1);
+    free(addResultBinary); // Clean up the heap memory dynamically allocated by alu_add
+
+    // --- 2. ALU Subtraction Evaluation ---
+    char* subResultBinary = alu_sub(testA, testB);
+    int subResultDecimal = binaryToVariable(subResultBinary);
+
+    ExposurePrintf(
+        LEVEL1,
+        "%sALU Sub ->%s %s%s%s - %s%s%s = %s%s%s%s (Decimal: %s%s%d%s)\n", 
+        BOLD, RESET, 
+        FG_CYAN, testA, RESET, 
+        FG_CYAN, testB, RESET, 
+        BOLD, FG_GREEN, subResultBinary, RESET, 
+        BOLD, FG_GREEN, subResultDecimal, RESET
+    );
+    ExposureNewline(LEVEL1);
+    free(subResultBinary); // Clean up the heap memory dynamically allocated by alu_sub
+
+    // Closing category framework boundary splitter
+    ExposureLinebreak(LEVEL1);
 }
 
 void testLogicDoubleInput(char logicType[], short (*logic)(short, short)) {
@@ -87,8 +179,20 @@ void testLogicDoubleInput(char logicType[], short (*logic)(short, short)) {
     short bitB[] = {0, 0, 1, 1};
 
     for (int index = 0; index < 4; index++) {
-        printf(BOLD FG_GREEN "%hd" RESET " %s " BOLD FG_COLOR(50) "%hd" RESET " = " BOLD "%hd%c" RESET, bitA[index], logicType, bitB[index], logic(bitA[index], bitB[index]), LINEFEED);
+        ExposurePrintf(
+            LEVEL1,
+            BOLD "%s" RESET
+            " Test -> "
+            BOLD FG_GREEN "%d" RESET
+            " %s "
+            BOLD FG_YELLOW "%d" RESET
+            " Result = "
+            BOLD "%d\n" RESET,
+            logicType, bitA[index], logicType, bitB[index], logic(bitA[index], bitB[index])
+        );
+        ExposureNewline(LEVEL1);
     }
+
 }
 
 void testLogicSingleInput(char logicType[], short (*logic)(short)) {
@@ -96,8 +200,16 @@ void testLogicSingleInput(char logicType[], short (*logic)(short)) {
 
     if (strcmp(logicType, "NOT") == 0) {
         for (int index = 0; index < 2; index++) {
-            printf("NOT " BOLD FG_GREEN "%hd" RESET " = " BOLD "%hd%c" RESET, bits[index], logic(bits[index]), LINEFEED);
+            ExposurePrintf(
+                LEVEL1,
+                BOLD "NOT" RESET
+                " Test -> "
+                BOLD FG_GREEN "%d" RESET
+                " NOT Result = "
+                BOLD "%d\n" RESET,
+                bits[index], logic(bits[index])
+            );
+            ExposureNewline(LEVEL1);
         }
     }
-
 }

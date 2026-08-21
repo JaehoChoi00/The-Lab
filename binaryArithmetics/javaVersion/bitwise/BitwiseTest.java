@@ -1,7 +1,10 @@
 package binaryArithmetics.javaVersion.bitwise;
 
 import java.util.Map;
-import static shared.javaUtil.VariableConstants.*;
+
+import shared.javaUtil.Exposure;
+import shared.javaUtil.enums.ExposureCategory;
+import shared.javaUtil.enums.ExposureLevel;
 
 @FunctionalInterface
 interface TwoBitOperation {
@@ -27,22 +30,30 @@ public class BitwiseTest {
     );
 
     public void run() {
-
-        // Bit Operations
-        System.out.printf(BOLD + UNDERLINE + "%c[Bit Operations]" +  RESET, (char) LINEFEED);
-        NEWLINE();
+        // Category Header Block
+        Exposure.printf(
+            ExposureCategory.TEST, ExposureLevel.LEVEL1, 
+            Exposure.BOLD + Exposure.UNDERLINE + "%c[Bit Operations]" + Exposure.RESET, 
+            (char) Exposure.LINEFEED
+        );
+        Exposure.NEWLINE(ExposureCategory.TEST, ExposureLevel.LEVEL1);
 
         testLogicDoubleInput("NAND");
-        NEWLINE();
+        Exposure.NEWLINE(ExposureCategory.TEST, ExposureLevel.LEVEL1);
+        
         testLogicDoubleInput("AND");
-        NEWLINE();
+        Exposure.NEWLINE(ExposureCategory.TEST, ExposureLevel.LEVEL1);
+        
         testLogicDoubleInput("OR");
-        NEWLINE();
+        Exposure.NEWLINE(ExposureCategory.TEST, ExposureLevel.LEVEL1);
+        
         testLogicDoubleInput("XOR");
-        NEWLINE();
+        Exposure.NEWLINE(ExposureCategory.TEST, ExposureLevel.LEVEL1);
+        
         testLogicSingleInput("NOT");
-        NEWLINE();
-
+        Exposure.NEWLINE(ExposureCategory.TEST, ExposureLevel.LEVEL1);
+        
+        Exposure.LINEBREAK(ExposureCategory.TEST, ExposureLevel.LEVEL1);
     }
 
     public void testLogicDoubleInput(String logicType) {
@@ -52,7 +63,20 @@ public class BitwiseTest {
         TwoBitOperation operator = TWOBITOPERATIONS.get(logicType.toUpperCase());
 
         for (int index = 0; index < 4; index++) {
-            System.out.printf( BOLD + FG_GREEN + "%h" + RESET + " %s " + BOLD + FG_COLOR(50) + "%h" + RESET + " = " + BOLD + "%h %c" +  RESET, bitsA[index], logicType, bitsB[index], operator.apply(bitsA[index], bitsB[index]), LINEFEED);
+            int result = operator.apply(bitsA[index], bitsB[index]);
+            
+            // Format: [Label] -> Cyan Input 1 [Op] Cyan Input 2 = Bold Green Result
+            Exposure.printf(
+                ExposureCategory.TEST, ExposureLevel.LEVEL1, 
+                Exposure.BOLD + "%s Test -> " + Exposure.RESET
+                + Exposure.FG_CYAN + "%d" + Exposure.RESET 
+                + " %s " 
+                + Exposure.FG_CYAN + "%d" + Exposure.RESET 
+                + " = " 
+                + Exposure.BOLD + Exposure.FG_GREEN + "%d" + Exposure.RESET + "%n", 
+                logicType, bitsA[index], logicType, bitsB[index], result
+            );
+
         }
     }
 
@@ -62,13 +86,30 @@ public class BitwiseTest {
         if (!logicType.equals("NOT")) {
             TwoBitOperation operator = TWOBITOPERATIONS.get(logicType.toUpperCase());
             for (int index = 0; index < 2; index++) {
-                System.out.printf( BOLD + FG_GREEN + "%h" + RESET + " %s = " + BOLD + "%h%c" +  RESET, bits[index], logicType, operator.apply(bits[index], bits[index]), (char) LINEFEED);
+                int result = operator.apply(bits[index], bits[index]);
+                
+                Exposure.printf(
+                    ExposureCategory.TEST, ExposureLevel.LEVEL1, 
+                    Exposure.BOLD + "%s Test -> " + Exposure.RESET
+                    + Exposure.FG_CYAN + "%d" + Exposure.RESET 
+                    + " %s = " 
+                    + Exposure.BOLD + Exposure.FG_GREEN + "%d" + Exposure.RESET + "%n", 
+                    logicType, bits[index], logicType, result
+                );
             }
-        }
-        else {
+        } else {
             SingleBitOperation NOT = SINGLEBITOPERATIONS.get(logicType.toUpperCase());
             for (int index = 0; index < 2; index++) {
-                System.out.printf( BOLD + FG_GREEN + "%h" + RESET + " %s = " + BOLD + "%h%c" +  RESET, bits[index], logicType, NOT.apply(bits[index]), (char) LINEFEED);
+                int result = NOT.apply(bits[index]);
+                
+                Exposure.printf(
+                    ExposureCategory.TEST, ExposureLevel.LEVEL1, 
+                    Exposure.BOLD + "%s Test -> " + Exposure.RESET
+                    + Exposure.FG_CYAN + "%d" + Exposure.RESET 
+                    + " %s = " 
+                    + Exposure.BOLD + Exposure.FG_GREEN + "%d" + Exposure.RESET + "%n", 
+                    logicType, bits[index], logicType, result
+                );
             }
         }
     }
