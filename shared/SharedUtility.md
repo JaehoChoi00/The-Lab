@@ -15,10 +15,8 @@
 ### Java
 
 > * [`VariableConstants`](/shared/javaUtil/VariableConstants.java)
-
-`Enums`:
-
-> * [`Exposure Levels`](/shared/javaUtil/enums/ExposureLevel.md)
+> * [`Exposure`](/shared/javaUtil/Exposure.md)
+>     * [`Exposure Levels`](/shared/javaUtil/enums/ExposureLevel.md)
 
 ---
 ### Python

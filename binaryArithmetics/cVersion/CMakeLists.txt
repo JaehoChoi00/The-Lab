@@ -12,7 +12,7 @@ include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}/binary
     ${CMAKE_CURRENT_SOURCE_DIR}/bitwise
     ${CMAKE_CURRENT_SOURCE_DIR}/arithmetics
-    ${SHARED_DIR}/cHeaders
+    ${SHARED_DIR}/cHeadersg
 )
 
 set(SOURCES

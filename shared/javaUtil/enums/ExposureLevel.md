@@ -1,8 +1,12 @@
 # Exposure Matrix Filter
 
-[Return to Hub](/shared/SharedUtility.md)
+[:arrow_left: Return to Hub](/shared/SharedUtility.md)  
+[:arrow_left: Return to Understanding Exposure](/shared/javaUtil/Exposure.md)  
 
-> How much can we see, and from which category?
+> What type of coffee bean and intensity?
+
+> * [`ExposureLevel.java`](/shared/javaUtil/enums/ExposureLevel.java) 
+> * [`ExposureCategory.java`](/shared/javaUtil/enums/ExposureCategory.java) 
 
 ## Sections
 

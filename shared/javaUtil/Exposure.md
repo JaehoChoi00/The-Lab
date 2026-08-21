@@ -3,9 +3,11 @@
 [:arrow_left: Return to Hub](/shared/SharedUtility.md)  
 [:arrow_right: Understand `Exposure Level & Exposure Category`](/shared/javaUtil/enums/ExposureLevel.md)
 
-# The EXPRESSO Framework
+# The :coffee: EXPRESSO Framework
 
 > Building the intuition from the ground up through 2D matrix filtering.
+
+> * [`Exposure.java`](/shared/javaUtil/Exposure.java) 
 
 ## Sections
 
